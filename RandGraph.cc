@@ -92,7 +92,6 @@ double SoP_helper(int j, double* r, bool* cg_i_rest, bool* cg_cur) {
 double GetSoP(bool* arr, double* r, int i) {
   double sop = 0.0; bool cg_i[10];
   std::fill_n(cg_i, 10, 0);
-  double prod_term = 1.0;
   for (int j= i*10; j<= i*10+9; j++){
     if (arr[j] == 0){
       cg_i[j-i*10] = 1; // indicating all the links can co-Tx with link i

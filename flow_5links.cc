@@ -125,7 +125,6 @@ double SoP_helper(int j, double* r, bool* cg_i_rest, bool* cg_cur) {
 double GetSoP(bool* arr, double* r, int i) {
   double sop = 0.0; bool cg_i[5];
   std::fill_n(cg_i, 5, 0);
-  double prod_term = 1.0;
   for (int j= i*5; j<= i*5+4; j++){
     if (arr[j] == 0){
       cg_i[j-i*5] = 1; // indicating all the links can co-Tx with link i
@@ -224,9 +223,9 @@ static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
     }
 }
 
-uint32_t ContextToNodeId(std::string context) {
+int ContextToNodeId(std::string context) {
   std::string sub = context.substr (10);
-  uint32_t pos = sub.find ("/Device");
+  int pos = sub.find ("/Device");
   return atoi (sub.substr (0, pos).c_str ());
 }
 
@@ -265,7 +264,7 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
       int i = getOneActive(status), j = getOneActive(p2);
       cg_count[5*i+j]++; cg_count[5*j+i]++;
 
-      if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
+      //if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
     }
 
   }
@@ -282,7 +281,7 @@ void PhyTxEnd(int nodeID){
     int i = getOneActive(status), j = getOneActive(p2);
     cg_count[5*i+j]++; cg_count[5*j+i]++;
 
-    if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("TX_END!!!: " << Simulator::Now ().GetSeconds ());}
+    //if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("TX_END!!!: " << Simulator::Now ().GetSeconds ());}
   }
 
   //record the past on times of link that just finish its Tx:
@@ -308,7 +307,7 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
         int i = getOneActive(status), j = getOneActive(p2);
         cg_count[5*i+j]++; cg_count[5*j+i]++;
 
-        if(i == 4 && j == 4 || i == 4 && j == 4) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
+        //if(i == 4 && j == 4 || i == 4 && j == 4) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
       }
 
       //record the past on times of link that just finish its Tx:
@@ -339,7 +338,7 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
           int i = getOneActive(status), j = getOneActive(p2);
           cg_count[5*i+j]++; cg_count[5*j+i]++;
 
-          if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
+          //if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
         }
 
         //record the past on times of link that just finish its Tx:
