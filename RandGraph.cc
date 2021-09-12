@@ -392,7 +392,7 @@ int main(int argc, char *argv[]){
   for(NodeContainer::Iterator it = txer.Begin(); it != txer.End(); ++it) {
     Ptr<MobilityModel> mm = (*it)->GetObject<MobilityModel> ();
     Vector p = mm->GetPosition();
-    NS_LOG_UNCOND("x: " << p.x << " y: " << p.y);
+    //NS_LOG_UNCOND("x: " << p.x << " y: " << p.y);
 
     Ptr<UniformRandomVariable> r = CreateObject<UniformRandomVariable> ();
   	r->SetAttribute ("Min", DoubleValue (0.0));
@@ -598,7 +598,7 @@ int main(int argc, char *argv[]){
     double Npkt_link8 = Npkt_ob[8]*(1 + GetSoP(cg,r,8));
     double Npkt_link9 = Npkt_ob[9]*(1 + GetSoP(cg,r,9));
 
-    std::cout << sim_time << " " << TopologyRun << " " << mean << " "
+    std::cout << sim_time << " " << Topology_Run << " " << mean << " "
               << Npkt[0]*1.0/(sim_time-1) << " " << Npkt[1]*1.0/(sim_time-1) << " " << Npkt[2]*1.0/(sim_time-1) << " "
               << Npkt[3]*1.0/(sim_time-1) << " " << Npkt[4]*1.0/(sim_time-1) << " " << Npkt[5]*1.0/(sim_time-1) << " "
               << Npkt[6]*1.0/(sim_time-1) << " " << Npkt[7]*1.0/(sim_time-1) << " " << Npkt[8]*1.0/(sim_time-1) << " "
