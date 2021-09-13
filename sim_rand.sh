@@ -3,14 +3,14 @@
 rm -f ten_link_rand.txt
 filename='ia_means.txt'
 
-for T_run in $(seq 1 2);
+for T_run in $(seq 1 20);
 do
   echo "The Topology: " $T_run
   while read line;
   do
     echo "The ia_mean: " $line
     # sim for each rngrun (indep trials)
-    for run in $(seq 1 2);
+    for run in $(seq 1 50);
     do
         echo "The run number:" $run
         # run sim
