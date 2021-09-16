@@ -234,16 +234,6 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
     //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
     //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
-    if(ContextToNodeId(context) == 8){NS_LOG_UNCOND("Context: " << context);}
-
-    //record the past ia times of link that about to Tx:
-    if(prev_ia[ContextToNodeId(context)] != 0){
-      ia[ContextToNodeId(context)] += (Simulator::Now().GetSeconds() - prev_ia[ContextToNodeId(context)]);
-      N_ia[ContextToNodeId(context)] += 1;
-
-    }
-    // update the time-stamp for the start of current pkt Tx
-    prev_on[ContextToNodeId(context)] = Simulator::Now ().GetSeconds ();
 
     // increment the packet number tracker:
     Npkt[ContextToNodeId(context)] ++;
@@ -263,8 +253,6 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
     if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
       int i = getOneActive(status), j = getOneActive(p2);
       cg_count[5*i+j]++; cg_count[5*j+i]++;
-
-      //if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
     }
 
   }
@@ -280,16 +268,7 @@ void PhyTxEnd(int nodeID){
   if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
     int i = getOneActive(status), j = getOneActive(p2);
     cg_count[5*i+j]++; cg_count[5*j+i]++;
-
-    //if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("TX_END!!!: " << Simulator::Now ().GetSeconds ());}
   }
-
-  //record the past on times of link that just finish its Tx:
-  on[nodeID] += (Simulator::Now().GetSeconds() - prev_on[nodeID]);
-  N_on[nodeID] += 1;
-  // update the time-stamp for the start of current pkt Tx
-  prev_ia[nodeID] = Simulator::Now ().GetSeconds ();
-
 }
 
 void PhyRx(std::string context, Ptr<const Packet> p) {
@@ -306,15 +285,7 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
       if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
         int i = getOneActive(status), j = getOneActive(p2);
         cg_count[5*i+j]++; cg_count[5*j+i]++;
-
-        //if(i == 4 && j == 4 || i == 4 && j == 4) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
       }
-
-      //record the past on times of link that just finish its Tx:
-      on[ContextToNodeId(context)-5] += (Simulator::Now().GetSeconds() - prev_on[ContextToNodeId(context)-5]);
-      N_on[ContextToNodeId(context)-5] += 1;
-      // update the time-stamp for the start of inter-arrival interval:
-      prev_ia[ContextToNodeId(context)-5] = Simulator::Now ().GetSeconds ();
 
       //increment the packet number tracker:
       Npkt_rx[ContextToNodeId(context)-5] ++;
@@ -337,16 +308,7 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
         if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
           int i = getOneActive(status), j = getOneActive(p2);
           cg_count[5*i+j]++; cg_count[5*j+i]++;
-
-          //if((i == 4 && j == 4) || (i == 4 && j == 4)) {NS_LOG_UNCOND("!!!: " << Simulator::Now ().GetSeconds ());}
         }
-
-        //record the past on times of link that just finish its Tx:
-        on[ContextToNodeId(context)-5] += (Simulator::Now().GetSeconds() - prev_on[ContextToNodeId(context)-5]);
-        N_on[ContextToNodeId(context)-5] += 1;
-        // update the time-stamp for the start of current pkt Tx
-        prev_ia[ContextToNodeId(context)-5] = Simulator::Now ().GetSeconds ();
-
       }
       else if(reason == 2 || reason == 5) {
         Simulator::Schedule(Seconds(0.0014), &PhyTxEnd, ContextToNodeId(context)-5);
@@ -639,13 +601,13 @@ int main (int argc, char *argv[]){
     //          << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " " << Npkt_link3*1.0/(sim_time - 1) << " " << Npkt_link4*1.0/(sim_time - 1) <<
     //          << " " << Npkt_link5*1.0/(sim_time - 1) << "\n";
 
-    std::cout << sim_time << " " << mean << " "
-              << r[0] << " " << r[1] << " " << r[2] << " " << r[3] << " " << r[4] << " "
-              << total_pkt[0]*1.0 << " " << total_pkt[1]*1.0 << " " << total_pkt[2]*1.0 << " " << total_pkt[3]*1.0 << " " << total_pkt[4]*1.0 << " "
-              << collision[0]*1.0 << " " << collision[1]*1.0 << " " << collision[2]*1.0 << " " << collision[3]*1.0 << " " << collision[4]*1.0 << " "
-              << sr << " "
+    std::cout << sim_time << " " << Topology_Run << " " << mean << " "
               << Npkt[0]*1.0/(sim_time - 1) << " " << Npkt[1]*1.0/(sim_time - 1) << " " << Npkt[2]*1.0/(sim_time - 1) << " "
               << Npkt[3]*1.0/(sim_time - 1) << " " << Npkt[4]*1.0/(sim_time - 1) << " "
+              << Npkt_ob[0]*1.0/(sim_time - 1) << " " << Npkt_ob[1]*1.0/(sim_time - 1) << " " << Npkt_ob[2]*1.0/(sim_time - 1) << " "
+              << Npkt_ob[3]*1.0/(sim_time - 1) << " " << Npkt_ob[4]*1.0/(sim_time - 1) << " "
+              << collision[0]*1.0/(sim_time - 1) << " " << collision[1]*1.0/(sim_time - 1) << " " << collision[2]*1.0/(sim_time - 1) << " "
+              << collision[3]*1.0/(sim_time - 1) << " " << collision[4]*1.0/(sim_time - 1) << " "
               << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " " << Npkt_link3*1.0/(sim_time - 1) << " "
               << Npkt_link4*1.0/(sim_time - 1) << " " << Npkt_link5*1.0/(sim_time - 1) << "\n";
   }
