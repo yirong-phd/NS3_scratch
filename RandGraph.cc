@@ -59,6 +59,7 @@ bool* add_cur_set(bool* cg_cur, int j){
 double SoP_helper(int j, double* r, bool* cg_i_rest, bool* cg_cur) {
 
   if(j == 9){
+    //std::cout << std::endl;
     return 1.0;
   }
 
@@ -78,6 +79,7 @@ double SoP_helper(int j, double* r, bool* cg_i_rest, bool* cg_cur) {
         if(flag == 1){
           bool* cg_rest_new = new bool[10];
           get_rest_cg(k,cg_i_rest,cg_rest_new);
+          //std::cout << k << " ";
           sum += r[k]*SoP_helper(k,r,cg_rest_new,add_cur_set(cg_cur,k));
           delete[] cg_rest_new;
         }
@@ -211,8 +213,9 @@ int ContextToLinkId(std::string context, bool x) {  // x=0 for Tx; x=1 for Rx
 void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
     //NS_LOG_UNCOND ("PhyTx link " << ContextToLinkId(context,0) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-    //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3]<< std::endl);
-    //NS_LOG_UNCOND("PhyTx src node: " << ContextToLinkId(context,1));
+    //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " <<
+    //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
+    //               status[8] << " " << status[9] << std::endl);
 
     // increment the packet number tracker:
     Npkt[ContextToLinkId(context,0)] ++;
@@ -239,8 +242,9 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 // tracer function to keep track of collided packet's finish time
 void PhyTxEnd(int linkID){
   //NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " link=" << linkID);
-  //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << std::endl);
-  //std::cout << "PhyTxEnd: " << linkID << std::endl;
+  //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " <<
+  //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
+  //               status[8] << " " << status[9] << std::endl);
 
   std::copy(p1,p1+10,p2);  //p2 = p1
   std::copy(status,status+10,p1); //p1 = status
@@ -259,8 +263,9 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
       //NS_LOG_UNCOND(ContextToLinkId(context,1) << " + " << idx);
       if( ContextToLinkId(context,1) == idx ) {
         //NS_LOG_UNCOND ("PhyRx link " << idx << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3]);
-        //NS_LOG_UNCOND("PhyRx dst node: " << ContextToLinkId(context,1) << std::endl);
+        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " <<
+        //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
+        //               status[8] << " " << status[9] << std::endl);
 
         // update the Tx status vector while estimating the CG:
         std::copy(p1,p1+10,p2);  //p2 = p1
@@ -286,8 +291,11 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
       int idx = FindLink(srctable,p->GetUid());
       if( ContextToLinkId(context,1) == idx ) {
         //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << idx << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
-        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << std::endl);
+        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " <<
+        //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
+        //               status[8] << " " << status[9] << std::endl);
         //std::cout << "PhyRxDrop: " << FindLink(srctable,p->GetUid()) << std::endl;
+        //if(idx == 2) {NS_LOG_UNCOND("Link 2 has a packet dropped at: " << Simulator::Now().GetSeconds());}
         Npkt_drop[idx] ++;
         if (reason == 3) {
           // update the Tx status vector while estimating the CG:
@@ -415,8 +423,8 @@ int main(int argc, char *argv[]){
   // Install wireless devices
   YansWifiChannelHelper channel = YansWifiChannelHelper::Default ();
   channel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
-  channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
-  //channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(2.1));
+  //channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
+  channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(0.51));
 
   YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default ();
   wifiPhy.SetChannel (channel.Create());
@@ -442,6 +450,7 @@ int main(int argc, char *argv[]){
 
   Ipv4InterfaceContainer nodeInterface;
   nodeInterface = ipv4.Assign(devices);
+
 
   // Install applications: 10 single-hop flows with random graph topology:
   for(int i=0; i<=9; i++) {
@@ -477,6 +486,7 @@ int main(int argc, char *argv[]){
     pingApps.Add (echoClientHelper.Install (txer.Get(i)));
   }
   */
+
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyTxBegin" , MakeCallback(&PhyTx));
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyRxEnd" , MakeCallback(&PhyRx));
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyRxDrop",MakeCallback(&PhyRxDrop));
@@ -506,6 +516,7 @@ int main(int argc, char *argv[]){
   }
   // Cleanup
   Simulator::Destroy();
+
 
   // contention graph estimation & link packet rate estimation
   std::fill_n(cg, 100, 1); // initialize the contention graph as a fully-connected one.
@@ -538,8 +549,8 @@ int main(int argc, char *argv[]){
     }
     t0_new = t0_new / static_cast<double>(n0);
     t1_new = t1_new / static_cast<double>(n1);
-    //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
-    //std::cout << "New Threshold: " << t0_new << " and threshold: " << t1_new << std::endl;
+    std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
+    std::cout << "New Threshold: " << t0_new << " and threshold: " << t1_new << std::endl;
     flag = 1;
   }
 
@@ -549,6 +560,7 @@ int main(int argc, char *argv[]){
     if(pow(cg_count[i]-t1,2) < pow(cg_count[i]-t0,2) && (i%10 != i/10))
       {cg[i] = 0;}
   }
+
 
   /*
   // contention graph estimation & link packet rate estimation
@@ -565,6 +577,7 @@ int main(int argc, char *argv[]){
     //r[i] = i+1;
   }
 
+  if(outputmode == 0) { std::cout << "Finished!" << std::endl;}
   if(outputmode == 1) {
     std::cout << "Npkt: " << Npkt[0] << " " << Npkt[1] << " " << Npkt[2] << " "
               << Npkt[3] << " " << Npkt[4] << " " << Npkt[5] << " "
@@ -582,7 +595,7 @@ int main(int argc, char *argv[]){
               << Npkt_ob[5]*(1+GetSoP(cg,r,5)) << " " << Npkt_ob[6]*(1+GetSoP(cg,r,6)) << " "
               << Npkt_ob[7]*(1+GetSoP(cg,r,7)) << " " << Npkt_ob[8]*(1+GetSoP(cg,r,8)) << " "
               << Npkt_ob[9]*(1+GetSoP(cg,r,9)) << "\n";
-    //for(int i=0; i<=99; i++){ std::cout << cg_count[i] << ' ';}
+    for(int i=0; i<=99; i++){ std::cout << cg_count[i] << ' ';}
     //for(int i=0; i<=9; i++){ std::cout << r[i] << ' ';}
   }
   else if(outputmode == 2) {
