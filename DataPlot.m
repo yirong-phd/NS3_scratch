@@ -1,6 +1,6 @@
 %% This Matlab Script plots the NS3-simlated data on server
 clear; clc;
-file = './ten_link_rand_p2.txt';
+file = './ten_link_rand_p1.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 sim = str2num(char(T_clear)); % numbers
@@ -16,10 +16,10 @@ sr_rate = zeros(Nsim,10);
 for i = 1:Nsim
     for j = 1:10
         error(i,j) = sum((sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,33+j)).^2)/run_time;
-        error(i,j) = error(i,j) / (sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time);
+        error(i,j) = error(i,j) / (sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
 
         c_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,23+j)./sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
-        sr_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j)./(sim(run_time*(i-1)+1:run_time*i,13+j)) - 1)/run_time;
+        sr_rate(i,j) = sum(1 - sim(run_time*(i-1)+1:run_time*i,13+j)./(sim(run_time*(i-1)+1:run_time*i,3+j)))/run_time;
     end
     %sr_rate(i) = sum(1 - sum(sim(run_time*(i-1)+1:run_time*i,14:23),2)./sum(sim(run_time*(i-1)+1:run_time*i,4:13),2))/run_time;
 end
@@ -48,6 +48,9 @@ for id = 2:10
 end
 lgd = legend("link 1","link 2","link 3","link 4","link 5","link 6","link 7","link 8","link 9","link 10");
 lgd.FontSize = 24;
+xlabel('The collision rate within legitimate network','FontSize',24);
+ylabel('The collision rate at the observer','FontSize',24);
+zlabel('The normalized MSE','FontSize',24);
 
 figure;
 plot3(c_rate(31:60,1),sr_rate(31:60,1),error(31:60,1),'-.*','LineWidth',5);
@@ -58,7 +61,9 @@ for id = 2:10
 end
 lgd = legend("link 1","link 2","link 3","link 4","link 5","link 6","link 7","link 8","link 9","link 10");
 lgd.FontSize = 24;
-
+xlabel('The collision rate within legitimate network','FontSize',24);
+ylabel('The collision rate at the observer','FontSize',24);
+zlabel('The normalized MSE','FontSize',24);
 %% Plot for 5-link cases:
 clear; clc;
 file = './ten_link_rand.txt';
