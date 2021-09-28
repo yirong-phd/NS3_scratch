@@ -1,0 +1,241 @@
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.365s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.366s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.371s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.365s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 1 1 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.372s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.364s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.383s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.371s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.366s)
+1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 1 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.365s)
+1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+1 0 1 0 0 0 1 0 0 1 0 1 1 0 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 1 0 0 1 1 1 0 1 1 1 0 0 1 0 0 0 1 1 1 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 1 1 1 1 0 0 0 0 0 0 1 1 Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 1 0 1 
