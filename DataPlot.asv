@@ -36,16 +36,11 @@ for i = 1:Nsim
 
         c_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,23+j)./sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
         r_error(i,j) = sum( sum(sim(run_time*(i-1)+1:run_time*i,23+find(cg(j,:)==0)),2) ./ sum(sim(run_time*(i-1)+1:run_time*i,3+find(cg(j,:)==0)),2) )/run_time;
+        x_metric(i,j) = sum(  );
 
         sr_rate(i,j) = sum(1 - sim(run_time*(i-1)+1:run_time*i,13+j)./(sim(run_time*(i-1)+1:run_time*i,3+j)))/run_time;
     end
     %sr_rate(i) = sum(1 - sum(sim(run_time*(i-1)+1:run_time*i,14:23),2)./sum(sim(run_time*(i-1)+1:run_time*i,4:13),2))/run_time;
-end
-
-for i = 1:Nsim
-    for j = 1:10
-        x_metric(i,j) = sum( r_error(i,find(cg(j,:)==0)) );
-    end
 end
 
 figure;
@@ -64,11 +59,11 @@ end
 
 
 figure;
-plot3(r_error(1:30,1),sr_rate(1:30,1),error(1:30,1),'-.*','LineWidth',5);
+plot3(c_rate(1:30,1),sr_rate(1:30,1),error(1:30,1),'-.*','LineWidth',5);
 grid on
 hold on
 for id = 2:10
-    plot3(r_error(1:30,id),sr_rate(1:30,id),error(1:30,id),'-.*','LineWidth',5);
+    plot3(c_rate(1:30,id),sr_rate(1:30,id),error(1:30,id),'-.*','LineWidth',5);
 end
 lgd = legend("link 1","link 2","link 3","link 4","link 5","link 6","link 7","link 8","link 9","link 10");
 lgd.FontSize = 24;

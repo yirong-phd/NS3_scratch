@@ -24,12 +24,15 @@ std::map<int,int> srctable;
 double Npkt[10], Npkt_ob[10], NiC2[10], Npkt_rx[10], Npkt_drop[10];
 bool status[10];
 
-double r[10];
+double r[10], r_real[10];
 
 bool p1[10], p2[10]; // the two-step memory for CG estimation
 bool cg_true[100];
 bool cg[100];
 double cg_count[100];
+
+double prev_on[10], prev_ia[10], ia[10], on[10];
+double N_on[10], N_ia[10];
 
 double Get_r_denom(bool* arr, int i) {
   double denom = 0;
@@ -217,6 +220,15 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
     //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
     //               status[8] << " " << status[9] << std::endl);
 
+    //record the past ia times of link that about to Tx:
+    if(prev_ia[ContextToLinkId(context,0)] != 0){
+      ia[ContextToLinkId(context,0)] += (Simulator::Now().GetSeconds() - prev_ia[ContextToLinkId(context,0)]);
+      N_ia[ContextToLinkId(context,0)] += 1;
+
+    }
+    // update the time-stamp for the start of current pkt Tx
+    prev_on[ContextToLinkId(context,0)] = Simulator::Now ().GetSeconds ();
+
     // increment the packet number tracker:
     Npkt[ContextToLinkId(context,0)] ++;
 
@@ -246,6 +258,15 @@ void PhyTxEnd(int linkID){
   //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
   //               status[8] << " " << status[9] << std::endl);
 
+  //record the past on times of link that just finish its Tx:
+  if(prev_on[linkID] != 0){
+    on[linkID] += (Simulator::Now().GetSeconds() - prev_on[linkID]);
+    N_on[linkID] += 1;
+  }
+  // update the time-stamp for the start of current pkt Tx
+  prev_ia[linkID] = Simulator::Now ().GetSeconds ();
+
+
   std::copy(p1,p1+10,p2);  //p2 = p1
   std::copy(status,status+10,p1); //p1 = status
   status[linkID] = false;
@@ -266,6 +287,14 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
         //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " <<
         //               status[4] << " " << status[5] << " " << status[6] << " " << status[7] << " " <<
         //               status[8] << " " << status[9] << std::endl);
+
+        //record the past on times of link that just finish its Tx:
+        if(prev_on[ContextToLinkId(context,1)] != 0){
+          on[ContextToLinkId(context,1)] += (Simulator::Now().GetSeconds() - prev_on[ContextToLinkId(context,1)]);
+          N_on[ContextToLinkId(context,1)] += 1;
+        }
+        // update the time-stamp for the start of current pkt Tx
+        prev_ia[ContextToLinkId(context,1)] = Simulator::Now ().GetSeconds ();
 
         // update the Tx status vector while estimating the CG:
         std::copy(p1,p1+10,p2);  //p2 = p1
@@ -298,6 +327,14 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
         //if(idx == 2) {NS_LOG_UNCOND("Link 2 has a packet dropped at: " << Simulator::Now().GetSeconds());}
         Npkt_drop[idx] ++;
         if (reason == 3) {
+          //record the past on times of link that just finish its Tx:
+          if(prev_on[ContextToLinkId(context,1)] != 0){
+            on[ContextToLinkId(context,1)] += (Simulator::Now().GetSeconds() - prev_on[ContextToLinkId(context,1)]);
+            N_on[ContextToLinkId(context,1)] += 1;
+          }
+          // update the time-stamp for the start of current pkt Tx
+          prev_ia[ContextToLinkId(context,1)] = Simulator::Now ().GetSeconds ();
+
           // update the Tx status vector while estimating the CG:
           std::copy(p1,p1+10,p2);  //p2 = p1
           std::copy(status,status+10,p1); //p1 = status
@@ -332,10 +369,14 @@ int main(int argc, char *argv[]){
   std::fill_n(p1, 10, 0);
   std::fill_n(p2, 10, 0);
 
-  std::fill_n(r,10,0);
+  std::fill_n(r,10,0); std::fill_n(r_real,10,0);
 
   std::fill_n(Npkt, 10, 0); std::fill_n(Npkt_ob, 10, 0); std::fill_n(NiC2, 10, 0);
   std::fill_n(Npkt_drop, 10, 0); std::fill_n(Npkt_rx, 10, 0);
+
+  std::fill_n(prev_ia,10,0); std::fill_n(prev_on,10,0);
+  std::fill_n(ia,10,0); std::fill_n(on,10,0);
+  std::fill_n(N_ia,10,0); std::fill_n(N_on,10,0);
 
   CommandLine cmd;
   cmd.AddValue ("sim_time", "simulation time in seconds", sim_time);
@@ -421,7 +462,7 @@ int main(int argc, char *argv[]){
   NodeContainer nodes(txer,rxer);
 
   // Install wireless devices
-  YansWifiChannelHelper channel = YansWifiChannelHelper::Default ();
+  YansWifiChannelHelper channel = YansWifiChannelHelper::Default();
   channel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
   //channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
   channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(0.51));
@@ -549,8 +590,8 @@ int main(int argc, char *argv[]){
     }
     t0_new = t0_new / static_cast<double>(n0);
     t1_new = t1_new / static_cast<double>(n1);
-    std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
-    std::cout << "New Threshold: " << t0_new << " and threshold: " << t1_new << std::endl;
+    //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
+    //std::cout << "New Threshold: " << t0_new << " and threshold: " << t1_new << std::endl;
     flag = 1;
   }
 
@@ -575,9 +616,12 @@ int main(int argc, char *argv[]){
   for (int i=0; i<=9; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
     //r[i] = i+1;
+    on[i] = on[i]/N_on[i];
+    ia[i] = ia[i]/N_ia[i];
+    r_real[i] = on[i]/ia[i];
   }
 
-  if(outputmode == 0) { std::cout << "Finished!" << std::endl;}
+  if(outputmode == 0) { for(int i=0; i<=99; i++){ std::cout << cg[i] << ' ';} }
   if(outputmode == 1) {
     std::cout << "Npkt: " << Npkt[0] << " " << Npkt[1] << " " << Npkt[2] << " "
               << Npkt[3] << " " << Npkt[4] << " " << Npkt[5] << " "
@@ -595,8 +639,9 @@ int main(int argc, char *argv[]){
               << Npkt_ob[5]*(1+GetSoP(cg,r,5)) << " " << Npkt_ob[6]*(1+GetSoP(cg,r,6)) << " "
               << Npkt_ob[7]*(1+GetSoP(cg,r,7)) << " " << Npkt_ob[8]*(1+GetSoP(cg,r,8)) << " "
               << Npkt_ob[9]*(1+GetSoP(cg,r,9)) << "\n";
-    for(int i=0; i<=99; i++){ std::cout << cg_count[i] << ' ';}
     //for(int i=0; i<=9; i++){ std::cout << r[i] << ' ';}
+    //for(int i=0; i<=9; i++){std::cout << on[i]/ia[i] << ' ';}
+    //for(int i=0; i<=9; i++){std::cout << ia[i] << ' ';}
   }
   else if(outputmode == 2) {
     double Npkt_link0 = Npkt_ob[0]*(1 + GetSoP(cg,r,0));
@@ -626,7 +671,11 @@ int main(int argc, char *argv[]){
               << Npkt_link0*1.0/(sim_time - 1) << " " << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " "
               << Npkt_link3*1.0/(sim_time - 1) << " " << Npkt_link4*1.0/(sim_time - 1) << " " << Npkt_link5*1.0/(sim_time - 1) << " "
               << Npkt_link6*1.0/(sim_time - 1) << " " << Npkt_link7*1.0/(sim_time - 1) << " " << Npkt_link8*1.0/(sim_time - 1) << " "
-              << Npkt_link9*1.0/(sim_time - 1)
+              << Npkt_link9*1.0/(sim_time - 1) << " "
+              << r[0] << " " << r[1] << " " << r[2] << " " << r[3] << " " << r[4] << " " << r[5] << " " << r[6] << " " << r[7] << " "
+              << r[8] << " " << r[9] << " "
+              << r_real[0] << " " << r_real[1] << " " << r_real[2] << " " << r_real[3] << " " << r_real[4] << " "
+              << r_real[5] << " " << r_real[6] << " " << r_real[7] << " " << r_real[8] << " " << r_real[9] << " "
               << std::endl;
   }
   return 0;
