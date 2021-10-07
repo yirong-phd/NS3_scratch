@@ -32,19 +32,18 @@ bool cg[9];
 double cg_count[9];
 
 int NiC2[3] = {0,0,0}; // the observable values of N_{i->C2} for r_i's estimation
-int NiC2_ex[3] = {0,0,0}; // the expanded observable values of N_{i->C2} for r_i's estimation
+
 int N2[9] = {0,0,0,0,0,0,0,0,0}; // for debug: record all the cases of N_{1->12, 1->13, 2->12, 2->23, 3->13, 3->23}
-int N2_ex[9] = {0,0,0,0,0,0,0,0,0};
+
 
 
 int N3[3] = {0,0,0};
 double r[3] = {0,0,0};
-double r_ex[3] = {0,0,0};
 std::map<int,int> srctable;
 
-//int flow_src[3] = {8,7,0}; int flow_dst[3] = {12,11,1};    // three links indep
-//int flow_src[3] = {12,4,9}; int flow_dst[3] = {8,8,10};    // the most HN one
-int flow_src[3] = {8,6,4}; int flow_dst[3] = {12,10,5};
+int flow_src[3] = {8,11,2}; int flow_dst[3] = {12,7,3};    // link{2 <-> 3} HN symmetric
+//int flow_src[3] = {8,15,7}; int flow_dst[3] = {12,11,3};    // link{2 <- 3} HN asymetric
+//int flow_src[3] = {8,6,4}; int flow_dst[3] = {12,10,5};
 //int flow_src[3] = {0,2,7}; int flow_dst[3] = {1,3,11};
 
 int bufferd_pkt[3] = {0,0,0};
@@ -71,6 +70,7 @@ double Get_r_denom_ex(bool* arr, int i) {
   return denom;
 }
 
+/*
 double GetSoP(bool* arr, double* r, int i) {
   double sop = 0.0;
   bool v[3] = {0,0,0};
@@ -94,6 +94,82 @@ double GetSoP(bool* arr, double* r, int i) {
   }
   return sop;
 }
+*/
+void get_rest_cg(int i, bool* cg_i, bool* rest_cg){
+
+  std::fill_n(rest_cg, 3, 0);
+  for(int j=i+1; j<=2; j++) {
+    rest_cg[j] = cg_i[j];
+  }
+}
+
+bool* add_cur_set(bool* cg_cur, int j){
+  cg_cur[j] = 1;
+  return cg_cur;
+}
+
+double SoP_helper(int j, double* r, bool* cg_i_rest, bool* cg_cur) {
+
+  if(j == 2){
+    return 1.0;
+  }
+
+  else{
+    double sum = 1.0;
+    for(int k = 0; k<=2; k++){
+      if(cg_i_rest[k] != 0){ // if the rest_cg is empty, then we directly skip here
+        bool flag = 1;
+        //if the new-added link k is indep with all existing links:
+        for(int l=0; l<=2; l++){
+          if(cg_cur[l]!=0){ // for all the links in the set:
+            if(cg[3*l+k] == 1){ // if link k interferes with any one of them:
+              flag = 0;
+            }
+          }
+        }
+        if(flag == 1){
+          bool* cg_rest_new = new bool[3];
+          get_rest_cg(k,cg_i_rest,cg_rest_new);
+          //NS_LOG_UNCOND(k << " + " << cg_cur[0] << " " << cg_cur[1] << " " << cg_cur[2]);
+          //NS_LOG_UNCOND(r[k]*SoP_helper(k,r,cg_rest_new,add_cur_set(cg_cur,k)));
+          sum += r[k]*SoP_helper(k,r,cg_rest_new,add_cur_set(cg_cur,k));
+          delete[] cg_rest_new;
+        }
+      }
+    }
+    return sum;
+  }
+}
+
+
+double GetSoP(bool* arr, double* r, int i) {
+  double sop = 0.0; bool cg_i[3];
+  std::fill_n(cg_i, 3, 0);
+  double prod_term = 1.0;
+  for (int j= i*3; j<= i*3+2; j++){
+    if (arr[j] == 0){
+      cg_i[j-i*3] = 1; // indicating all the links can co-Tx with link i
+    }
+  }
+
+  for(int j=0; j<=2; j++){
+    if(cg_i[j] != 0){
+      bool* cg_cur = new bool[3];
+      std::fill_n(cg_cur,3,0);
+
+      bool* cg_i_rest = new bool[3];
+      get_rest_cg(j, cg_i, cg_i_rest);
+
+      double new_sop = r[j]*(SoP_helper(j, r, cg_i_rest, add_cur_set(cg_cur,j)));
+      //NS_LOG_UNCOND("Link: " << i << " has sop for " << j << " as: " << new_sop);
+      sop += new_sop;
+      delete[] cg_cur;
+      delete[] cg_i_rest;
+    }
+  }
+  return sop;
+}
+
 
 int SrctoLink(int src) { // maps the src id to the link id for unicasting network
   int* idx = std::find(std::begin(flow_src),std::end(flow_src),src);
@@ -245,18 +321,6 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
     if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
       int i = getOneActive(status), j = getOneActive(p2);
       cg_count[3*i+j]++; cg_count[3*j+i]++;
-    }
-
-    if(prev_pkt[ContextToLinkId(context,0)] == true) { // if the prev pkt is received
-      Npkt_ex[ContextToLinkId(context,0)] ++;
-      if(NumActive(status_ex) == 0){
-        Npkt_ob_ex[ContextToLinkId(context,0)] ++;
-      }
-      else if(NumActive(status_ex) == 1) { // N_{j -> i,j}, increment the NiC2[i]
-        NiC2_ex[getOneActive(status_ex)] ++;
-        N2_ex[getOneActive(status_ex)*3+ContextToLinkId(context,0)] ++;
-      }
-      status_ex[ContextToLinkId(context,0)] = true;
     }
 
   }
@@ -503,7 +567,7 @@ int main(int argc, char *argv[]){
   std::map<FlowId, FlowMonitor::FlowStats> stats = monitor->GetFlowStats ();
 	Ptr<Ipv4FlowClassifier> classifier = DynamicCast<Ipv4FlowClassifier> (flowmon.GetClassifier ());
   for (std::map<FlowId, FlowMonitor::FlowStats>::const_iterator i = stats.begin (); i != stats.end (); ++i)
-    {
+  {
       if(outputmode == 1) {
         Ipv4FlowClassifier::FiveTuple t = classifier->FindFlow (i->first);
         std::cout << "Flow " << i->first << " (" << t.sourceAddress << " -> " << t.destinationAddress << ")\n";
@@ -515,10 +579,9 @@ int main(int argc, char *argv[]){
         std::cout << "  Throughput: " << i->second.rxBytes * 8.0 / (sim_time - 1) / 1000 / 1000  << " Mbps\n";
         std::cout << "  Packet Rate: " << i->second.rxPackets * 1.0 / (sim_time - 1) << " Pkt/Sec" << "\n";
       }
-
-    }
+  }
   // Cleanup
-  Simulator::Destroy ();
+  Simulator::Destroy();
 
   // contention graph estimation & link packet rate estimation
   std::fill_n(cg, 9, 1); // initialize the contention graph as a fully-connected one.
@@ -536,15 +599,14 @@ int main(int argc, char *argv[]){
   // computation of r and r_empirical:
   for (int i=0; i<=2; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
-    r_ex[i] = static_cast<double>(NiC2_ex[i])/Get_r_denom_ex(cg,i);
 
   }
 
-  double collision[3] = {0,0,0}; double total_pkt[3] = {0,0,0}; double sr = 0;
+  double collision[3] = {0,0,0}; double total_pkt[3] = {0,0,0}; double sr[3] = {0,0,0};
   for (int i=0; i<=2; i++){
     collision[i] += Npkt_drop[i];
     total_pkt[i] += Npkt[i];
-    sr += Npkt_ob[i];
+    sr[i] += Npkt_ob[i];
   }
 
   if(outputmode == 1) {
@@ -555,7 +617,7 @@ int main(int argc, char *argv[]){
     std::cout << "Npkt_ob_r: " << Npkt_ob_r[0] << " " << Npkt_ob_r[1]<< " " << Npkt_ob_r[2] << std::endl;
     //std::cout << "NiC2: " << NiC2[0] << " " << NiC2[1] << " " << NiC2[2] << " " << NiC2[3] << " " << NiC2[4] << std::endl;
     std::cout << "r_est: " << r[0] << " " << r[1] << " " << r[2] << std::endl;
-    //std::cout << "r_ex:" << r_ex[0] << " " << r_ex[1] << " " << r_ex[2] << std::endl;
+
     std::cout << "r1_single_est: " << static_cast<double>(N2[0*3+1])/Npkt_ob[1] << " " << static_cast<double>(N2[0*3+2])/Npkt_ob[2] << std::endl;
     std::cout << "r2_single_est: " << static_cast<double>(N2[1*3+0])/Npkt_ob[0] << " " << static_cast<double>(N2[1*3+2])/Npkt_ob[2] << std::endl;
     std::cout << "r3_single_est: " << static_cast<double>(N2[2*3+0])/Npkt_ob[0] << " " << static_cast<double>(N2[2*3+1])/Npkt_ob[1] << std::endl;
@@ -567,6 +629,15 @@ int main(int argc, char *argv[]){
     std::cout << "Computed pkt rates: " << Npkt_ob[0]*(1+GetSoP(cg,r,0))/(sim_time-1) << " "
               << Npkt_ob[1]*(1+GetSoP(cg,r,1))/(sim_time-1) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2))/(sim_time-1) << "\n";
     std::cout << "Link pkt collision rates: " << Npkt_drop[0]/Npkt[0] << " " << Npkt_drop[1]/Npkt[1] << " " << Npkt_drop[2]/Npkt[2] << "\n";
+
+    /*
+    std::cout << "SoP r1 + r1*r2: " << r[1] + r[1]*r[2] << std::endl;
+    std::cout << "SoP r2: " << r[2] << std::endl;
+    std::cout << "SoP r0 + r0*r2: " << r[0] + r[0]*r[2] << std::endl;
+    std::cout << "SoP r2: " << r[2] << std::endl;
+    std::cout << "SoP r0 + r0*r1: " << r[0] + r[0]*r[1] << std::endl;
+    std::cout << "SoP r1: " << r[1] << std::endl;
+    */
     //for(int i=0; i<=8; i++){ std::cout << cg[i] << ' ';} std::cout << std::endl;
     //for(int i=0; i<=8; i++){ std::cout << N2[i] << ' ';} for(int i=0; i<=8; i++){ std::cout << N2r[i] << ' ';} std::cout << std::endl;
   }
@@ -577,34 +648,14 @@ int main(int argc, char *argv[]){
 
     std::cout << sim_time << " " << mean << " "
               //<< r[0] << " " << r[1] << " "
-              << static_cast<double>(Npkt_rx[0]*1000*8.0) / (sim_time-1) / 1000 / 1000 << " "
-              << static_cast<double>(Npkt_rx[1]*1000*8.0) / (sim_time-1) / 1000 / 1000 << " "
-              << static_cast<double>(Npkt_rx[2]*1000*8.0) / (sim_time-1) / 1000 / 1000 << " "
-              << total_pkt[0]*1.0 << " " << total_pkt[1]*1.0 << " " << total_pkt[2]*1.0 << " "
-              << collision[0]*1.0 << " " << collision[1]*1.0 << " " << collision[2]*1.0 << " "
-              << sr << " "
+              //<< static_cast<double>(Npkt_rx[0]*1000*8.0) / (sim_time-1) / 1000 / 1000 << " "
+              //<< static_cast<double>(Npkt_rx[1]*1000*8.0) / (sim_time-1) / 1000 / 1000 << " "
+              //<< static_cast<double>(Npkt_rx[2]*1000*8.0) / (sim_time-1) / 1000 / 1000 << " "
+              << collision[0]/total_pkt[0]*1.0 << " " << collision[1]/total_pkt[1]*1.0 << " " << collision[2]/total_pkt[2]*1.0 << " "
+              << sr[0]/total_pkt[0]*1.0 << " " << sr[1]/total_pkt[1]*1.0 << " " << sr[2]/total_pkt[2]*1.0 << " "
               << Npkt[0]*1.0/(sim_time - 1) << " " << Npkt[1]*1.0/(sim_time - 1) << " " << Npkt[2]*1.0/(sim_time - 1) << " "
-              << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " " << Npkt_link3*1.0/(sim_time - 1) << " "
-              << static_cast<double>(bufferd_pkt[0])/arrived_pkt[0] << " " << static_cast<double>(bufferd_pkt[0])/arrived_pkt[0] << " "
-              << static_cast<double>(bufferd_pkt[2])/arrived_pkt[2] << "\n";
+              << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " " << Npkt_link3*1.0/(sim_time - 1) << "\n";
   }
 
-  else if(outputmode == 4) {
-    double Npkt_link1_ex = Npkt_ob_ex[0]*(1 + GetSoP(cg,r_ex,0));
-    double Npkt_link2_ex = Npkt_ob_ex[1]*(1 + GetSoP(cg,r_ex,1));
-    double Npkt_link3_ex = Npkt_ob_ex[2]*(1 + GetSoP(cg,r_ex,2));
-    std::cout << "Npkt_ex: " << Npkt_ex[0] << " " << Npkt_ex[1]<< " " << Npkt_ex[2] << std::endl;
-    std::cout << "Npkt_rx: " << Npkt_rx[0] << " " << Npkt_rx[1]<< " " << Npkt_rx[2] << std::endl;
-    std::cout << "Npkt_ob: " << Npkt_ob[0] << " " << Npkt_ob[1] << " " << Npkt_ob[2] << std::endl;
-    std::cout << "Npkt_ob_ex: " << Npkt_ob_ex[0] << " " << Npkt_ob_ex[1] << " " << Npkt_ob_ex[2] << std::endl;
-    std::cout << "r1_single_est: " << static_cast<double>(N2[0*3+1])/Npkt_ob[1] << " " << static_cast<double>(N2[0*3+2])/Npkt_ob[2] << std::endl;
-    std::cout << "r1_single_est_ex: " << static_cast<double>(N2_ex[0*3+1])/Npkt_ob_ex[1] << " " << static_cast<double>(N2_ex[0*3+2])/Npkt_ob_ex[2] << std::endl;
-    std::cout << "r2_single_est_ex: " << static_cast<double>(N2_ex[1*3+0])/Npkt_ob_ex[0] << " " << static_cast<double>(N2_ex[1*3+2])/Npkt_ob_ex[2] << std::endl;
-    std::cout << "r3_single_est_ex: " << static_cast<double>(N2_ex[2*3+0])/Npkt_ob_ex[0] << " " << static_cast<double>(N2_ex[2*3+1])/Npkt_ob_ex[1] << std::endl;
-    std::cout << "True pkt rates: " << Npkt_ex[0]/(sim_time-1) << " "
-              << Npkt_ex[1]/(sim_time-1) << " " << Npkt_ex[2]/(sim_time-1) << std::endl;
-    std::cout << "Computed pkt rates: " << Npkt_link1_ex*1.0/(sim_time - 1) << " "
-              << Npkt_link2_ex*1.0/(sim_time - 1) << " " << Npkt_link3_ex*1.0/(sim_time - 1) << std::endl;
-  }
   return 0;
 }
