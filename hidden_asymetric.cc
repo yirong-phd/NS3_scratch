@@ -43,7 +43,7 @@ std::map<int,int> srctable;
 
 int flow_src[3] = {8,11,2}; int flow_dst[3] = {12,7,3};    // link{2 <-> 3} HN symmetric
 //int flow_src[3] = {8,15,7}; int flow_dst[3] = {12,11,3};    // link{2 <- 3} HN asymetric
-//int flow_src[3] = {8,6,4}; int flow_dst[3] = {12,10,5};
+//int flow_src[3] = {8,11,1}; int flow_dst[3] = {9,10,5};     // link(1<->3; 1<->2) HN symmetric
 //int flow_src[3] = {0,2,7}; int flow_dst[3] = {1,3,11};
 
 int bufferd_pkt[3] = {0,0,0};
