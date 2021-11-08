@@ -349,22 +349,22 @@ int main (int argc, char *argv[]){
   NodeContainer txer,rxer;
   txer.Create (5); rxer.Create(5);
 
-  /*
+
   MobilityHelper mobility_tx,mobility_rx;
   Ptr<ListPositionAllocator> positionAlloc_tx = CreateObject<ListPositionAllocator>();
   Ptr<ListPositionAllocator> positionAlloc_rx = CreateObject<ListPositionAllocator>();
 
   positionAlloc_tx->Add(Vector(1.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(11.0, 3.0, 0.0));
-  positionAlloc_tx->Add(Vector(21.0, 1.5-delta, 0.0));
-  positionAlloc_tx->Add(Vector(36.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(46.0, 3.0, 0.0));
+  positionAlloc_tx->Add(Vector(11.0, 3.3, 0.0));
+  positionAlloc_tx->Add(Vector(21.0, 1.0, 0.0));
+  positionAlloc_tx->Add(Vector(36.0, 3.3, 0.0));
+  positionAlloc_tx->Add(Vector(36.0, 1.0, 0.0));
 
   positionAlloc_rx->Add(Vector(1.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(11.0, 2.5, 0.0));
-  positionAlloc_rx->Add(Vector(21.0, 2.0-delta, 0.0));
-  positionAlloc_rx->Add(Vector(36.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(46.0, 2.5, 0.0));
+  positionAlloc_rx->Add(Vector(11.0, 2.3, 0.0));
+  positionAlloc_rx->Add(Vector(21.0, 2.0, 0.0));
+  positionAlloc_rx->Add(Vector(36.0, 2.3, 0.0));
+  positionAlloc_rx->Add(Vector(36.0, 2.0, 0.0));
 
   mobility_tx.SetPositionAllocator(positionAlloc_tx);
   mobility_tx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
@@ -373,8 +373,9 @@ int main (int argc, char *argv[]){
   mobility_rx.SetPositionAllocator(positionAlloc_rx);
   mobility_rx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
   mobility_rx.Install(rxer);
-  */
 
+
+  /*
   RngSeedManager::SetRun (Topology_Run);
   MobilityHelper mobility_tx,mobility_rx;
   mobility_tx.SetPositionAllocator("ns3::RandomRectanglePositionAllocator",
@@ -401,7 +402,7 @@ int main (int argc, char *argv[]){
   mobility_rx.SetPositionAllocator(positionAlloc);
   mobility_rx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
   mobility_rx.Install(rxer);
-
+  */
   NodeContainer nodes(txer,rxer);
 
   // Install wireless devices
@@ -528,7 +529,7 @@ int main (int argc, char *argv[]){
 
   for(int i=0; i<=24; i++){
     int a = i % 5; int b = i / 5;
-    cg_count[i] = cg_count[i]/(Npkt_ob[a]+Npkt_ob[b]);
+    //cg_count[i] = cg_count[i]/(Npkt_ob[a]+Npkt_ob[b]);
     if (a == b) {cg_count[i] = 0;}
   }
 
@@ -561,15 +562,23 @@ int main (int argc, char *argv[]){
   }
 
   //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
-
+  
   for(int i=0; i<=24; i++){
     if(pow(cg_count[i]-t1,2) < pow(cg_count[i]-t0,2) && (i%5 != i/5))
       {cg[i] = 0;}
   }
 
+  /*
+  for(int i=0; i<=24; i++){
+    if(cg_count[i] >= 20)
+      {cg[i] = 0;}
+  }
+  */
+
   // computation of r and r_empirical:
   for (int i=0; i<=4; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
+    std::cout << i << "'s denom: " << Get_r_denom(cg,i) << std::endl;
     //r[i] = i+1;
   }
 
