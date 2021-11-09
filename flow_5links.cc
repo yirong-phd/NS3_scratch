@@ -320,7 +320,7 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
 int main (int argc, char *argv[]){
 
   uint32_t packetSize = 1000; // bytes
-  uint32_t numPackets = 10000; // a sufficient large enough number
+  uint32_t numPackets = 100000; // a sufficient large enough number
   double mean = 0.02;
 	double bound = 0.0;
 
@@ -562,18 +562,18 @@ int main (int argc, char *argv[]){
   }
 
   //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
-  
+  /*
   for(int i=0; i<=24; i++){
     if(pow(cg_count[i]-t1,2) < pow(cg_count[i]-t0,2) && (i%5 != i/5))
       {cg[i] = 0;}
   }
+  */
 
-  /*
   for(int i=0; i<=24; i++){
-    if(cg_count[i] >= 20)
+    if(cg_count[i] >= 1)
       {cg[i] = 0;}
   }
-  */
+
 
   // computation of r and r_empirical:
   for (int i=0; i<=4; i++){
@@ -600,7 +600,7 @@ int main (int argc, char *argv[]){
 
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
-    for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";}
+    for(int i=0; i<= 24; i++) {std::cout << cg[i] << " ";}
   }
   else if(outputmode == 2){
     double Npkt_link1 = Npkt_ob[0]*(1 + GetSoP(cg,r,0)); double Npkt_link3 = Npkt_ob[2]*(1 + GetSoP(cg,r,2)); double Npkt_link5 = Npkt_ob[4]*(1 + GetSoP(cg,r,4));
