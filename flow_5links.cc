@@ -356,13 +356,13 @@ int main (int argc, char *argv[]){
 
   positionAlloc_tx->Add(Vector(1.0, 4.0, 0.0));
   positionAlloc_tx->Add(Vector(11.0, 3.3, 0.0));
-  positionAlloc_tx->Add(Vector(21.0, 1.0, 0.0));
+  positionAlloc_tx->Add(Vector(11.0, 1.0, 0.0));
   positionAlloc_tx->Add(Vector(36.0, 3.3, 0.0));
   positionAlloc_tx->Add(Vector(36.0, 1.0, 0.0));
 
   positionAlloc_rx->Add(Vector(1.0, 3.5, 0.0));
   positionAlloc_rx->Add(Vector(11.0, 2.3, 0.0));
-  positionAlloc_rx->Add(Vector(21.0, 2.0, 0.0));
+  positionAlloc_rx->Add(Vector(11.0, 2.0, 0.0));
   positionAlloc_rx->Add(Vector(36.0, 2.3, 0.0));
   positionAlloc_rx->Add(Vector(36.0, 2.0, 0.0));
 

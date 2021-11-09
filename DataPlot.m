@@ -143,7 +143,7 @@ end
 
 %% Plot for 5-link cases:
 clear; clc;
-file = './five_link_1symHN.txt';
+file = './five_link.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 sim = str2num(char(T_clear)); % numbers
