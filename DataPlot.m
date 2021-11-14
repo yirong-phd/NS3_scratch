@@ -1,7 +1,7 @@
 %% This Matlab Script plots the NS3-simlated data on server
 clear; clc;
-file = './ten_link_rand_p1.txt';
-%file = './ten_link_rand_R.txt';
+%file = './ten_link_rand_p1.txt';
+file = './ten_link_rand_R.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 sim = str2num(char(T_clear)); % numbers
@@ -143,7 +143,7 @@ end
 
 %% Plot for 5-link cases:
 clear; clc;
-file = './five_link.txt';
+file = './five_link_strongsymHN.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 sim = str2num(char(T_clear)); % numbers
@@ -156,6 +156,8 @@ p_rate = zeros(Nsim,5);
 c_rate = zeros(Nsim,5);
 sr_rate = zeros(Nsim,5);
 
+C_rate = zeros(Nsim,1);
+
 for i = 1:Nsim
     for j = 1:5
         p_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
@@ -166,6 +168,7 @@ for i = 1:Nsim
         sr_rate(i,j) = sum(1 - sim(run_time*(i-1)+1:run_time*i,8+j)./(sim(run_time*(i-1)+1:run_time*i,3+j)))/run_time;
     end
     %sr_rate(i) = sum(1 - sum(sim(run_time*(i-1)+1:run_time*i,14:23),2)./sum(sim(run_time*(i-1)+1:run_time*i,4:13),2))/run_time;
+    C_rate(i) = sum(sum(sim(run_time*(i-1)+1:run_time*i,14:18),2)./ sum(sim(run_time*(i-1)+1:run_time*i,4:8),2))/run_time;
 end
 
 figure;
@@ -182,11 +185,11 @@ figure;
 plot(p_rate);
 
 figure;
-plot3(c_rate(1:30,1),sr_rate(1:30,1),sqrt(error(1:30,1)),'-.*','LineWidth',5);
+plot3(C_rate(1:30),sr_rate(1:30,1),sqrt(error(1:30,1)),'-.*','LineWidth',5);
 grid on
 hold on
 for id = 2:5
-    plot3(c_rate(1:30,id),sr_rate(1:30,id),sqrt(error(1:30,id)),'-.*','LineWidth',5);
+    plot3(C_rate(1:30),sr_rate(1:30,id),sqrt(error(1:30,id)),'-.*','LineWidth',5);
 end
 lgd = legend("link 1","link 2","link 3","link 4","link 5");
 lgd.FontSize = 24;

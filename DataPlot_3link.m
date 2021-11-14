@@ -1,6 +1,6 @@
 %% This draft plots the NS3-simulated MSE & SR / Collision rates with 3-link
 clear; clc;
-file = './three_link_asymHN.txt';
+file = './three_link_symHN.txt';
 T = textread(file,'%s','delimiter','\n');
 %T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances (while preserves the NaN's)
@@ -95,25 +95,33 @@ crate_symHNstrong = C_rate;
 load crate_symHN.mat;
 crate_symHN = C_rate;
 
+load prate_symHN.mat;
+
 figure;
 subplot(2,3,1)
 semilogy(e_noHN(1:end,1),'-.*','LineWidth',1)
 hold on
 plot(e_symHN(1:end,1))
-
+lgd = legend("baseline","with weak HN");
+ylabel('Normalized Error')
+xlabel('Input index')
 for id = 2:3
     subplot(2,3,id)
     semilogy(e_noHN(1:end,id),'-.*','LineWidth',1);
     hold on
     plot(e_symHN(1:end,id))
+    lgd = legend("baseline","with weak HN");
 end
 
 subplot(2,3,4)
 plot(crate_symHN(1:end));
-
+ylabel('Network HN Collision Rate')
+xlabel('Input index')
 for id = 2:3
     subplot(2,3,id+3)
     plot(crate_symHN(1:end));
+    ylabel('Network HN Collision Rate')
+xlabel('Input index')
 end
 
 figure;
@@ -121,20 +129,29 @@ subplot(2,3,1)
 semilogy(e_noHN(1:end,1),'-.*','LineWidth',1)
 hold on
 plot(e_symHNstrong(1:end,1))
+lgd = legend("baseline","with strong HN");
+ylabel('Normalized Error')
+xlabel('Input index')
 
 for id = 2:3
     subplot(2,3,id)
     semilogy(e_noHN(1:end,id),'-.*','LineWidth',1);
     hold on
     plot(e_symHNstrong(1:end,id))
+    lgd = legend("baseline","with strong HN");
+ylabel('Normalized Error')
+xlabel('Input index')
 end
 
 subplot(2,3,4)
 plot(crate_symHNstrong(1:end));
-
+ylabel('Network HN Collision Rate')
+xlabel('Input index')
 for id = 2:3
     subplot(2,3,id+3)
     plot(crate_symHNstrong(1:end));
+    ylabel('Network HN Collision Rate')
+    xlabel('Input index')
 end
 
 
@@ -151,21 +168,54 @@ for id = 2:3
     plot(e_asymHN(1:end,id))
 end
 
-
+%{
 figure;
-subplot(1,3,1)
 plot(e_noHN(1:end,1),'-.*','LineWidth',1)
 hold on
 plot(e_symHN(1:end,1))
 plot(e_symHN_fixedCW(1:end,1),'-.o','LineWidth',1)
+%}
 %%
-figure;
-mse_symHNstrong = abs(e_symHNstrong - e_noHN);
-mse_symHN = abs(e_symHN - e_noHN);
+clear; clc;
+file = './three_link_T.txt';
+T = textread(file,'%s','delimiter','\n');
+T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
+%T_clear = T_clear(3:end);
+sim = str2num(char(T_clear)); % numbers
 
-plot(mse_symHN)
+run_time = 30;
+Nsim = round((length(sim))/run_time);
+error = zeros(Nsim,10);
+
+sim_time = zeros(Nsim,1);
+
+for i = 1:Nsim
+
+    row_idx = [];
+    for k = run_time*(i-1)+1:run_time*i
+        if ~isnan(sim(k,:))
+            row_idx = [row_idx,k];
+        end
+    end
+
+    avg_N = size(row_idx,2);
+
+    for j = 1:3
+  
+        error(i,j) = sum((sim(row_idx,8+j) - sim(row_idx,11+j)).^2)/avg_N;
+        error(i,j) = error(i,j) / (sum(sim(row_idx,8+j).^2)/avg_N);
+
+    end
+    sim_time(i) = sum(sim(row_idx,1))/avg_N;
+    
+end
+
+figure;
+plot(sim_time,sqrt(error(:,1)),'-.*','LineWidth',1)
 hold on
-plot(mse_symHNstrong)
+for i=2:3
+    plot(sim_time,sqrt(error(:,i)),'-.*','LineWidth',1)
+end
 %%
 means = logspace(-3,-1,30)';
 %means = linspace(0.001,0.05,20)';
