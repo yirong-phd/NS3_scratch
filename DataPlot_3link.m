@@ -1,6 +1,6 @@
 %% This draft plots the NS3-simulated MSE & SR / Collision rates with 3-link
 clear; clc;
-file = './three_link_symHN.txt';
+file = './three_link_noHN.txt';
 T = textread(file,'%s','delimiter','\n');
 %T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances (while preserves the NaN's)
@@ -217,6 +217,10 @@ for i=2:3
     plot(sim_time,sqrt(error(:,i)),'-.*','LineWidth',1)
 end
 %%
+clear all
+clc;
 means = logspace(-3,-1,30)';
 %means = linspace(0.001,0.05,20)';
 %writematrix(means,'./ia_means_3l.txt');
+delta = linspace(3.1,3.2,20)';
+writematrix(delta,"./deltaHN.txt");

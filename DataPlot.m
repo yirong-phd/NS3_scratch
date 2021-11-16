@@ -143,7 +143,7 @@ end
 
 %% Plot for 5-link cases:
 clear; clc;
-file = './five_link_strongsymHN.txt';
+file = './five_link.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
 sim = str2num(char(T_clear)); % numbers
@@ -172,14 +172,14 @@ for i = 1:Nsim
 end
 
 figure;
-plot(sr_rate(:,1),error(:,1));
+plot(sr_rate(:,1),sqrt(error(:,1)));
 hold on
 for id = 2:5
-    plot(sr_rate(:,id),error(:,id));
+    plot(sr_rate(:,id),sqrt(error(:,id)));
 end
 
 figure;
-semilogy(error);
+plot(sqrt(error));
 
 figure;
 plot(p_rate);

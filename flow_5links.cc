@@ -578,7 +578,7 @@ int main (int argc, char *argv[]){
   // computation of r and r_empirical:
   for (int i=0; i<=4; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
-    std::cout << i << "'s denom: " << Get_r_denom(cg,i) << std::endl;
+    //std::cout << i << "'s denom: " << Get_r_denom(cg,i) << std::endl;
     //r[i] = i+1;
   }
 
