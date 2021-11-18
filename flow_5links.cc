@@ -206,16 +206,25 @@ void ReceivePacket (Ptr<Socket> socket)
     }
 }
 static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
-                             uint32_t pktCount, Ptr<ExponentialRandomVariable> pktInterval)
+                             uint32_t pktCount, Ptr<ExponentialRandomVariable> pktInterval, double mean)
 {
   if (pktCount > 0)
     {
       //RngSeedManager::SetRun(2);
+      if(socket->GetNode()->GetId() == 1) {
+        pktInterval->SetAttribute ("Mean", DoubleValue (mean));
+      }
+      else if(socket->GetNode()->GetId() == 2) {
+        pktInterval->SetAttribute ("Mean", DoubleValue(mean));
+      }
+      else {
+        pktInterval->SetAttribute ("Mean", DoubleValue(mean));
+      }
 			Ptr<Packet> data_packet = Create<Packet> (pktSize);
       AddSrc(srctable,data_packet->GetUid(),socket->GetNode()->GetId());
 			socket->Send(data_packet);
       Simulator::Schedule (Seconds(0.0014+pktInterval->GetValue()), &GenerateTraffic,
-                           socket, pktSize, pktCount - 1, pktInterval);
+                           socket, pktSize, pktCount - 1, pktInterval, mean);
     }
   else
     {
@@ -234,6 +243,15 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
     //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
     //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+
+    //record the past ia times of link that about to Tx:
+    if(prev_ia[ContextToNodeId(context)] != 0){
+      ia[ContextToNodeId(context)] += (Simulator::Now().GetSeconds() - prev_ia[ContextToNodeId(context)]);
+      N_ia[ContextToNodeId(context)] += 1;
+
+    }
+    // update the time-stamp for the start of current pkt Tx
+    prev_on[ContextToNodeId(context)] = Simulator::Now ().GetSeconds ();
 
     // increment the packet number tracker:
     Npkt[ContextToNodeId(context)] ++;
@@ -262,6 +280,15 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 void PhyTxEnd(int nodeID){
   //NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
   //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+
+  //record the past on times of link that just finish its Tx:
+  if(prev_on[nodeID] != 0){
+    on[nodeID] += (Simulator::Now().GetSeconds() - prev_on[nodeID]);
+    N_on[nodeID] += 1;
+  }
+  // update the time-stamp for the start of current pkt Tx
+  prev_ia[nodeID] = Simulator::Now ().GetSeconds ();
+
   std::copy(p1,p1+5,p2);  //p2 = p1
   std::copy(status,status+5,p1); //p1 = status
   status[nodeID] = false;
@@ -273,9 +300,18 @@ void PhyTxEnd(int nodeID){
 
 void PhyRx(std::string context, Ptr<const Packet> p) {
   if (p->GetSize() == 1064) {
+    int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
       //NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
       //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+
+      //record the past on times of link that just finish its Tx:
+      if(prev_on[idx] != 0){
+        on[idx] += (Simulator::Now().GetSeconds() - prev_on[idx]);
+        N_on[idx] += 1;
+      }
+      // update the time-stamp for the start of current pkt Tx
+      prev_ia[idx] = Simulator::Now ().GetSeconds ();
 
       // update the Tx status vector while estimating the CG:
       std::copy(p1,p1+5,p2);  //p2 = p1
@@ -296,11 +332,23 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
 
 void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason reason){
   if(p->GetSize() == 1064) {
+    int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
-      //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
-      //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+
+        //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
+        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+
       Npkt_drop[ContextToNodeId(context)-5] ++;
       if (reason == 3) {
+
+        //record the past on times of link that just finish its Tx:
+        if(prev_on[idx] != 0){
+          on[idx] += (Simulator::Now().GetSeconds() - prev_on[idx]);
+          N_on[idx] += 1;
+        }
+        // update the time-stamp for the start of current pkt Tx
+        prev_ia[idx] = Simulator::Now ().GetSeconds ();
+
         // update the Tx status vector while estimating the CG:
         std::copy(p1,p1+5,p2);  //p2 = p1
         std::copy(status,status+5,p1); //p1 = status
@@ -328,6 +376,8 @@ int main (int argc, char *argv[]){
   std::fill_n(cg_count, 25, 0); // initialize the counter for each co-Tx pairs
 
   double sim_time = 20;
+  double delta2 = 3.3;
+  double delta4 = 3.3;
   uint16_t prop_loss = 1;
   uint16_t outputmode = 1;
   uint16_t Topology_Run = 1;
@@ -336,6 +386,8 @@ int main (int argc, char *argv[]){
   CommandLine cmd;
   cmd.AddValue ("sim_time", "simulation time in seconds", sim_time);
   cmd.AddValue ("prop_loss", "select the propagation loss model: 1 for RangePropagationLossModel; 2 for Friis model", prop_loss);
+  cmd.AddValue ("delta2", "Tx position of link 2", delta2);
+  cmd.AddValue ("delta4", "Tx position of link 4", delta4);
   cmd.AddValue ("outputmode", "selecte the output format: 1 reader friendly 2 for matlab", outputmode);
   cmd.AddValue ("ia_mean", "the mean value of the exponentially distributed pkt inter-arrival times", mean);
   cmd.AddValue ("TopologyRun", "the mean value of the exponentially distributed pkt inter-arrival times", Topology_Run);
@@ -355,15 +407,15 @@ int main (int argc, char *argv[]){
   Ptr<ListPositionAllocator> positionAlloc_rx = CreateObject<ListPositionAllocator>();
 
   positionAlloc_tx->Add(Vector(1.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(11.0, 3.3, 0.0));
+  positionAlloc_tx->Add(Vector(11.0, delta2, 0.0));
   positionAlloc_tx->Add(Vector(11.0, 1.0, 0.0));
-  positionAlloc_tx->Add(Vector(36.0, 3.1, 0.0));
+  positionAlloc_tx->Add(Vector(36.0, delta4, 0.0));
   positionAlloc_tx->Add(Vector(36.0, 1.0, 0.0));
 
   positionAlloc_rx->Add(Vector(1.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(11.0, 2.3, 0.0));
+  positionAlloc_rx->Add(Vector(11.0, delta2-1.0, 0.0));
   positionAlloc_rx->Add(Vector(11.0, 2.0, 0.0));
-  positionAlloc_rx->Add(Vector(36.0, 2.1, 0.0));
+  positionAlloc_rx->Add(Vector(36.0, delta4-1.0, 0.0));
   positionAlloc_rx->Add(Vector(36.0, 2.0, 0.0));
 
   mobility_tx.SetPositionAllocator(positionAlloc_tx);
@@ -403,6 +455,7 @@ int main (int argc, char *argv[]){
   mobility_rx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
   mobility_rx.Install(rxer);
   */
+
   NodeContainer nodes(txer,rxer);
 
   // Install wireless devices
@@ -465,7 +518,7 @@ int main (int argc, char *argv[]){
     source->Connect (remote);
     Simulator::ScheduleWithContext (source->GetNode()->GetId(),
                                          Seconds (1.001 + i*(0.0005)), &GenerateTraffic,
-                                         source, packetSize, numPackets, interval);
+                                         source, packetSize, numPackets, interval, mean);
   }
 
   // we also use separate UDP applications that will send a single
@@ -496,6 +549,7 @@ int main (int argc, char *argv[]){
 
   wifiPhy.EnablePcap("wifiA",devices.Get(0));
   wifiPhy.EnablePcap("wifiB",devices.Get(1));
+  wifiPhy.EnablePcap("wifiD",devices.Get(3));
   wifiPhy.EnablePcap("wifiA_recv",devices.Get(5));
 
   Simulator::Stop (Seconds (sim_time));
@@ -578,8 +632,9 @@ int main (int argc, char *argv[]){
   // computation of r and r_empirical:
   for (int i=0; i<=4; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
-    //std::cout << i << "'s denom: " << Get_r_denom(cg,i) << std::endl;
-    //r[i] = i+1;
+    on[i] = on[i]/N_on[i];
+    ia[i] = ia[i]/N_ia[i];
+    std::cout << "For link " << i << " Avg. ON: " << on[i] << " Avg. IA: " << ia[i] << std::endl;
   }
 
   double collision[5] = {0,0,0,0,0}; double total_pkt[5] = {0,0,0,0,0}; double sr = 0;

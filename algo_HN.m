@@ -3,7 +3,7 @@ clear; clc;
 file = './five_link_deltaHN.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
-T_clear = T_clear(3:end);
+%T_clear = T_clear(3:end);
 sim = str2num(char(T_clear)); % numbers
 
 run_time = 50;
@@ -37,12 +37,12 @@ for i = 1:Nsim
 end
 
 figure;
-plot(c_rate,KL)
+plot(sum(c_rate,2),KL,'-.*')
 
 
 figure;
-plot(c_rate,(error(:,1)),'-.*','LineWidth',1)
+plot(c_rate(:,1),(error(:,1)),'-.*','LineWidth',1)
 hold on
 for i=2:3
-    plot(c_rate,(error(:,i)),'-.*','LineWidth',1)
+    plot(c_rate(:,i),(error(:,i)),'-.*','LineWidth',1)
 end
