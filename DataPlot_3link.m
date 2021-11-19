@@ -222,5 +222,7 @@ clc;
 means = logspace(-3,-1,30)';
 %means = linspace(0.001,0.05,20)';
 %writematrix(means,'./ia_means_3l.txt');
-delta = linspace(3.1,3.4,50)';
+delta1 = linspace(3.1,3.4,50)';
+delta2 = linspace(3.4,4.2,31)';
+delta = [delta1(1:end-1);delta2];
 writematrix(delta,"./deltaHN.txt");

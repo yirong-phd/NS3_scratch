@@ -29,6 +29,12 @@ for i = 1:Nsim
     
 end
 
+figure;
+subplot(2,1,1)
+plot(p_rate)
+subplot(2,1,2)
+plot(c_rate)
+
 for i = 1:Nsim
     p_rate(i,:) = p_rate(i,:)./sum(p_rate(i,:));
     p_rate_est(i,:) = p_rate_est(i,:)./sum(p_rate_est(i,:));
@@ -37,8 +43,7 @@ for i = 1:Nsim
 end
 
 figure;
-plot(sum(c_rate,2),KL,'-.*')
-
+semilogy(sum(c_rate,2),KL,'-.*')
 
 figure;
 plot(c_rate(:,1),(error(:,1)),'-.*','LineWidth',1)
