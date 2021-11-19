@@ -225,4 +225,7 @@ means = logspace(-3,-1,30)';
 delta1 = linspace(3.1,3.4,50)';
 delta2 = linspace(3.4,4.2,31)';
 delta = [delta1(1:end-1);delta2];
-writematrix(delta,"./deltaHN.txt");
+idx = randperm(length(delta));
+delta_shuffle = delta(idx);
+Delta = [delta,delta_shuffle];
+writematrix(Delta,"./deltaHN.txt");
