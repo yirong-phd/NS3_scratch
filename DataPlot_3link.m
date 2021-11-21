@@ -229,3 +229,6 @@ idx = randperm(length(delta));
 delta_shuffle = delta(idx);
 Delta = [delta,delta_shuffle];
 writematrix(Delta,"./deltaHN.txt");
+%%
+time = linspace(20,100,50)';
+writematrix(time,'./time2.txt');
