@@ -1,0 +1,1250 @@
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.172 621.152 621.222 621.212 621.02 0.20202 0.030303 0.040404 0.040404 0.020202 0 0 0 0 0 52.7968 8.54597 22.0478 34.7062 5.64629
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.354 621.182 621.222 621.293 621.263 0.030303 0.0606061 0.0505051 0.0808081 0.0606061 0 0 0 0 0 190.023 360.366 82.0284 131.246 339.322
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.222 621.293 621.303 621.202 621.263 0.0909091 0 0.020202 0.020202 0.0505051 0 0 0 0 0 5951.84 0 2102.48 2286.03 5850.8
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.242 621.091 621.202 621.111 621.253 0.040404 0.020202 0.020202 0.020202 0.0707071 0 0 0 0 0 111.408 15.3303 19.2934 11.0427 15.6844
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.293 621.212 621.263 621.202 621.212 0.020202 0.020202 0.0707071 0.0505051 0.0808081 0 0 0 0 0 3.88998 0.620875 13.6149 17.6284 34.6229
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.202 621.232 621.121 621.222 621.091 0.131313 0.0707071 0.111111 0.111111 0.0505051 0 0 0 0 0 97.8717 121.747 124.315 82.8145 105.479
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+100 3.3 3.3 621.212 621.182 621.232 621.162 621.121 0.0505051 0.040404 0.0606061 0.040404 0.040404 0 0 0 0 0 9.5356 178.566 209.698 153.659 102.44
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.313 621.232 621.141 621.172 621.253 0.0505051 0.0505051 0.020202 0.0606061 0.0808081 0 0 0 0 0 16.1055 16.1055 7.91035 23.7311 74.1313
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.222 621.162 621.253 621.182 621.283 0.0606061 0.040404 0.020202 0.0606061 0.030303 0 0 0 0 0 10.6284 135.414 125.065 240.588 188.179
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 621.202 621.293 621.192 621.242 621.222 0.010101 0 0.030303 0.020202 0.030303 0 0 0 0 0 439.135 0 2690.58 1726.69 29.6046
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+100 3.3 3.3 621.283 621.232 621.273 621.273 621.111 0.151515 0.020202 0.222222 0.0707071 0.010101 0 0 0 0 0 54.2723 4.88675 24.6572 7.84547 2.44337
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.202 621.212 621.253 621.212 621.222 0.040404 0.030303 0 0.0505051 0.030303 0 0 0 0 0 658.025 222.13 0 860.831 222.13
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.131 621.293 621.192 621.081 621.172 0.0808081 0.131313 0.10101 0.0707071 0.040404 0 0 0 0 0 401.816 645.895 570.096 568.747 289.041
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.172 621.253 621.131 621.192 621.242 0.040404 0 0.040404 0.0505051 0.020202 0 0 0 0 0 473.227 0 472.757 528.642 497.351
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+100 3.3 3.3 621.343 621.273 621.303 621.212 621.162 0.131313 0.010101 0.040404 0.0505051 0.020202 0 0 0 0 0 175.883 1.26984 110.203 69.5527 37.6942
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.212 621.263 621.263 621.323 621.222 0.10101 0.0505051 0.020202 0.040404 0 0 0 0 0 0 36.5433 18.2716 33.4854 44.5529 0
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 621.222 621.253 621.182 621.192 621.283 0.232323 0.262626 0.0707071 0.151515 0.161616 0 0 0 0 0 175.392 192.877 56.7245 114.166 133.81
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 621.212 621.172 621.374 621.162 621.222 0.020202 0.030303 0 0 0.010101 0 0 0 0 0 105.537 62.0242 0 0 29.5354
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.242 621.202 621.232 621.273 621.172 0.0808081 0.151515 0.121212 0.111111 0.0909091 0 0 0 0 0 263.509 359.099 369.978 287.299 318.948
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.081 621.152 621.162 621.263 621.242 0.111111 0.111111 0.111111 0.111111 0.010101 0 0 0 0 0 64.1276 188.863 158.816 64.1276 15.6379
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.263 621.141 621.172 621.172 621.253 0.151515 0.010101 0.010101 0.030303 0.0808081 0 0 0 0 0 77.2416 3.03049 6.00174 7.25264 34.2847
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.091 621.172 621.253 621.212 621.283 0.0707071 0.0606061 0.030303 0.0606061 0.121212 0 0 0 0 0 775.444 801.06 314.519 611.118 963.639
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 621.374 621.293 621.172 621.212 621.152 0.10101 0.0505051 0.0909091 0.020202 0.131313 0 0 0 0 0 571.941 338.371 610.696 193.804 903.501
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.121 621.182 621.202 621.202 621.222 0.030303 0.10101 0.040404 0.131313 0.0808081 0 0 0 0 0 30.6212 196.373 91.9078 132.692 246.391
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.263 621.232 621.192 621.192 621.253 0.0909091 0.0909091 0.121212 0.040404 0.0707071 0 0 0 0 0 502.475 630.087 510.27 359.455 437.386
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.192 621.263 621.232 621.222 621.101 0.20202 0.10101 0.10101 0.10101 0.212121 0 0 0 0 0 31.1315 54.0024 53.399 69.2639 32.6881
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.192 621.273 621.253 621.172 621.152 0.0505051 0.010101 0.030303 0.141414 0.030303 0 0 0 0 0 427.426 46.9014 150.115 26.0334 325.496
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.222 621.101 621.263 621.263 621.232 0.20202 0.0606061 0.10101 0.0707071 0.181818 0 0 0 0 0 126.72 34.266 97.3973 39.977 156.719
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.212 621.263 621.182 621.303 621.202 0.020202 0.030303 0.010101 0.010101 0.030303 0 0 0 0 0 43.0128 36.4906 0.010101 12.1635 58.8537
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.365s)
+100 3.3 3.3 621.283 621.212 621.162 621.192 621.232 0.0808081 0.0505051 0.121212 0.040404 0.010101 0 0 0 0 0 1406.92 853.002 1572.62 870.442 173.689
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.232 621.111 621.172 621.212 621.273 0.0707071 0.111111 0.0505051 0.0909091 0.10101 0 0 0 0 0 6.10445 102.273 38.5452 103.277 100.578
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 621.192 621.192 621.222 621.212 621.192 0.0505051 0.040404 0.040404 0.0606061 0.010101 0 0 0 0 0 45.6211 11.4294 11.4294 29.1638 0.239538
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+100 3.3 3.3 621.111 621.131 621.253 621.242 621.212 0.121212 0.0505051 0.040404 0 0.030303 0 0 0 0 0 5266.92 3075.06 2342.54 0 2483.6
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.192 621.172 621.232 621.222 621.091 0.141414 0.212121 0.212121 0.10101 0.121212 0 0 0 0 0 139.229 128.007 148.923 51.4671 115.083
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.242 621.162 621.232 621.192 621.242 0.10101 0.0909091 0.0909091 0.10101 0.0909091 0 0 0 0 0 615.341 762.896 732.88 698.928 558.821
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.283 621.232 621.263 621.182 621.192 0.0808081 0.0808081 0 0.010101 0.010101 0 0 0 0 0 113 90.3333 0 9.2797 9.2797
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 621.364 621.333 621.242 621.202 621.202 0.222222 0.161616 0.121212 0.0909091 0.151515 0 0 0 0 0 239.779 184.299 144.802 107.702 179.956
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.383s)
+100 3.3 3.3 621.121 621.192 621.131 621.202 621.162 0.030303 0.020202 0.0505051 0.010101 0.0505051 0 0 0 0 0 670.032 281.396 1.06838 283.468 593.139
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.333 621.253 621.232 621.242 621.263 0.030303 0.0808081 0.0606061 0.040404 0.10101 0 0 0 0 0 490.463 697.903 539.222 460.39 589.842
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 621.192 621.263 621.172 621.192 621.162 0.010101 0 0 0.010101 0 0 0 0 0 0 1.31313 -nan -nan 207.475 0
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.263 621.222 621.162 621.182 621.141 0.10101 0.10101 0.141414 0.121212 0.141414 0 0 0 0 0 386.199 301.008 389.608 424.861 449.377
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.172 621.111 621.283 621.202 621.081 0.0909091 0.0909091 0.131313 0.0808081 0.0505051 0 0 0 0 0 66.8084 184.229 96.5011 136.766 90.0369
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.242 621.162 621.111 621.172 621.222 0.0808081 0.0707071 0.121212 0.020202 0.0707071 0 0 0 0 0 401.131 541.652 612.313 104.276 555.541
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.182 621.343 621.242 621.222 621.263 0.0505051 0.040404 0.030303 0.040404 0.0808081 0 0 0 0 0 1700.36 1350.73 969.495 1288.14 2045.24
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.202 621.212 621.232 621.263 621.131 0.0606061 0.0808081 0.0707071 0.030303 0.020202 0 0 0 0 0 806.072 902.291 761.161 647.242 358.93
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.202 621.182 621.273 621.232 621.202 0.111111 0.151515 0.040404 0.0909091 0.141414 0 0 0 0 0 226.593 276.983 124.313 205.048 326.625
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.242 621.182 621.111 621.182 621.283 0.111111 0.121212 0.141414 0.171717 0.030303 0 0 0 0 0 129.901 166.485 155.759 156.323 34.2575
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.192 621.253 621.242 621.242 621.121 0.0606061 0.0707071 0.0707071 0.010101 0.0606061 0 0 0 0 0 144.256 159.545 153.873 12.6818 76.0909
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.389s)
+100 3.3 3.3 621.232 621.253 621.172 621.04 621.283 0.020202 0.010101 0.040404 0.030303 0.010101 0 0 0 0 0 1331.5 886.331 723.735 542.801 720.753
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.303 621.212 621.202 621.253 621.202 0.0606061 0.141414 0.141414 0.0505051 0.10101 0 0 0 0 0 180.872 597.649 347.594 155.601 331.791
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.172 621.152 621.192 621.202 621.02 0.020202 0.0505051 0.030303 0.040404 0.040404 0 0 0 0 0 17.4 43.5 53.2066 32.2909 32.2909
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.343 621.182 621.222 621.293 621.263 0.0808081 0.10101 0.020202 0.0707071 0.010101 0 0 0 0 0 231.463 213.932 134.805 6.85486 74.4214
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.222 621.293 621.273 621.192 621.253 0.0707071 0.0707071 0.040404 0.0505051 0.0606061 0 0 0 0 0 982.782 1092.92 527.718 698.154 1102.98
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.242 621.091 621.202 621.101 621.242 0.040404 0.030303 0.020202 0.020202 0.020202 0 0 0 0 0 60.1605 22.4656 30.8438 16.9771 0.361111
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.293 621.212 621.242 621.202 621.222 0.121212 0.0909091 0.0505051 0.161616 0.141414 0 0 0 0 0 53.4842 17.9586 21.3271 31.9264 61.2707
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.202 621.232 621.111 621.212 621.091 0.0606061 0.010101 0.131313 0.040404 0.010101 0 0 0 0 0 134.073 20.2022 192.752 75.9359 1.39764
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 621.162 621.182 621.222 621.172 621.141 0.040404 0.0606061 0.020202 0.030303 0.040404 0 0 0 0 0 26.2333 20.8513 4.97778 4.69231 49.1382
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.303 621.232 621.141 621.182 621.253 0.252525 0.10101 0.111111 0.131313 0.0808081 0 0 0 0 0 455.147 171.161 201.279 192.515 127.81
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.222 621.162 621.242 621.182 621.293 0.191919 0.0909091 0.040404 0.131313 0.010101 0 0 0 0 0 222.786 92.4441 21.1122 68.6146 10.7272
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.202 621.293 621.192 621.242 621.212 0.040404 0.030303 0.0707071 0.0606061 0.10101 0 0 0 0 0 60.1001 77.6308 120.322 11.5436 149.468
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.283 621.232 621.273 621.283 621.061 0.181818 0.141414 0.111111 0.161616 0.0909091 0 0 0 0 0 140.648 128.784 136.479 140.423 105.151
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.172 621.222 621.253 621.212 621.222 0.131313 0.0505051 0.0909091 0.040404 0.010101 0 0 0 0 0 2705.33 1102.25 1995.99 1114.13 348.024
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.131 621.293 621.192 621.081 621.131 0.040404 0.0808081 0.151515 0.0606061 0.141414 0 0 0 0 0 177.751 528.398 869.097 292.972 670.295
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 621.141 621.253 621.152 621.192 621.232 0.040404 0.030303 0.030303 0.040404 0.010101 0 0 0 0 0 423.884 7.62397 179.163 291.405 124.345
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.343 621.273 621.293 621.212 621.162 0.0808081 0.0606061 0.262626 0.020202 0.161616 0 0 0 0 0 44.7662 14.9284 115.727 4.97614 64.9969
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 621.212 621.263 621.242 621.313 621.212 0.171717 0.151515 0.111111 0.0505051 0.0606061 0 0 0 0 0 594.666 652.977 606.179 239.478 216.17
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.222 621.242 621.182 621.192 621.283 0.121212 0.0707071 0.161616 0.10101 0.020202 0 0 0 0 0 381.191 358.701 359.009 401.212 96.8665
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.212 621.172 621.374 621.162 621.222 0.151515 0.0606061 0.010101 0.020202 0.030303 0 0 0 0 0 244.177 82.0612 13.6769 61.4785 68.856
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.242 621.192 621.222 621.273 621.172 0.030303 0.010101 0.0707071 0.030303 0.030303 0 0 0 0 0 88.8146 94.4982 207.234 565.572 274.017
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.081 621.152 621.162 621.273 621.242 0.141414 0.030303 0.111111 0.020202 0.030303 0 0 0 0 0 188.832 45.9093 183.293 30.6062 62.7332
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.263 621.141 621.172 621.172 621.242 0.0505051 0.010101 0.030303 0.010101 0.0707071 0 0 0 0 0 37.9231 9 27 7.58462 120.664
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 621.081 621.172 621.253 621.182 621.232 0.111111 0.020202 0.0505051 0.0505051 0.010101 0 0 0 0 0 179.677 32.6685 327.618 236.973 50.0525
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 621.374 621.283 621.182 621.202 621.141 0.020202 0.020202 0 0.0909091 0.121212 0 0 0 0 0 471.849 381.643 0 2570.89 1692.5
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.131 621.182 621.182 621.192 621.222 0.0909091 0.141414 0.0707071 0.151515 0.0606061 0 0 0 0 0 252.34 374.616 226.52 429.15 193.33
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.263 621.232 621.192 621.192 621.253 0.0606061 0.030303 0.0606061 0.131313 0.0808081 0 0 0 0 0 98.8653 107.952 98.8653 391.487 197.731
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.192 621.263 621.232 621.212 621.081 0.0707071 0.181818 0.0808081 0.0909091 0.020202 0 0 0 0 0 409.378 518.912 366.355 397.975 112.64
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.192 621.273 621.253 621.162 621.141 0.0505051 0.020202 0 0.020202 0 0 0 0 0 0 42.7128 58.1962 0 115.859 0
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.202 621.101 621.263 621.242 621.192 0.161616 0.121212 0.10101 0.10101 0.010101 0 0 0 0 0 347.992 344.97 361.852 477.831 63.1262
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.212 621.273 621.182 621.303 621.202 0.0505051 0.030303 0.0707071 0.0707071 0.0505051 0 0 0 0 0 199.629 55.0925 434.6 128.549 227.647
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.283 621.162 621.162 621.222 621.232 0.131313 0.030303 0.0606061 0.0808081 0.0808081 0 0 0 0 0 734.137 186.948 494.223 653.225 664.112
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.232 621.111 621.172 621.212 621.273 0.151515 0.141414 0.212121 0.10101 0.0707071 0 0 0 0 0 261.168 244.854 371.364 150.302 148.466
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.192 621.212 621.212 621.152 621.152 0.020202 0.0505051 0.040404 0 0.0707071 0 0 0 0 0 139.636 548.182 425.256 0 469
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.101 621.111 621.253 621.222 621.212 0.030303 0.0505051 0.0808081 0.161616 0.0909091 0 0 0 0 0 27.4596 45.766 163.664 230.525 126.952
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.182 621.162 621.232 621.222 621.091 0.0707071 0 0.0909091 0.010101 0.0505051 0 0 0 0 0 497.564 0 671.281 43.0973 215.486
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.242 621.162 621.232 621.192 621.242 0.171717 0.0808081 0.0505051 0.0505051 0.030303 0 0 0 0 0 1093.39 898.969 581.566 599.249 401.697
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.273 621.232 621.253 621.182 621.212 0.131313 0.040404 0.161616 0.040404 0.0606061 0 0 0 0 0 153.289 78.8062 244.045 44.6456 66.9684
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 621.354 621.333 621.242 621.192 621.202 0.0707071 0.10101 0.141414 0.111111 0.020202 0 0 0 0 0 410.979 659.806 689.303 659.855 192.236
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621 621.192 621.162 621.182 621.121 0.040404 0.020202 0 0.020202 0.010101 0 0 0 0 0 3363.43 1803.6 0 1323.85 445.788
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.333 621.242 621.232 621.242 621.263 0.040404 0.020202 0.040404 0.0606061 0.030303 0 0 0 0 0 213.682 307.884 213.682 608.074 324.225
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.172 621.263 621.172 621.182 621.152 0.030303 0.030303 0.010101 0.0707071 0.020202 0 0 0 0 0 19.0661 2.43232 9.06459 2.43875 28.3313
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.367s)
+100 3.3 3.3 621.263 621.222 621.152 621.182 621.141 0.0606061 0.121212 0.0505051 0.040404 0.111111 0 0 0 0 0 312.457 566.741 261.105 343.92 712.634
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.371s)
+100 3.3 3.3 621.172 621.101 621.273 621.202 621.081 0.020202 0.0707071 0.040404 0.0505051 0.020202 0 0 0 0 0 265.302 257.288 147.021 550.642 283.415
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.242 621.162 621.091 621.141 621.212 0.151515 0.181818 0.111111 0.121212 0.232323 0 0 0 0 0 130.149 121.977 163.336 156.455 218.659
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.182 621.333 621.253 621.222 621.253 0.010101 0.0606061 0.0505051 0.0606061 0.020202 0 0 0 0 0 48.1505 536.759 679.418 288.903 396.117
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.192 621.222 621.182 621.263 621.131 0.0606061 0.131313 0.0505051 0.0909091 0.0707071 0 0 0 0 0 25.8953 6.63626 30.5073 73.2688 56.7913
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 621.202 621.182 621.283 621.232 621.172 0.030303 0 0.0808081 0.030303 0.0909091 0 0 0 0 0 9.38889 -nan 28.4816 0.393939 42.0588
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.242 621.182 621.101 621.182 621.283 0.0505051 0.0909091 0.111111 0.171717 0.0505051 0 0 0 0 0 274.902 298.042 477.728 552.431 176.027
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.192 621.253 621.242 621.232 621.121 0.111111 0.0707071 0.030303 0.010101 0.0505051 0 0 0 0 0 207.322 14.7454 156.498 60.6199 177.613
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 621.242 621.263 621.172 621.03 621.263 0.030303 0.0606061 0.0606061 0 0.0505051 0 0 0 0 0 1557.91 1765.18 2481.25 0 1707.87
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 621.283 621.212 621.202 621.232 621.202 0.0606061 0.0505051 0.0808081 0.030303 0.111111 0 0 0 0 0 156.018 75.1235 301.077 45.0741 225.365
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.172 621.152 621.182 621.202 621.01 0.0606061 0.0707071 0.010101 0.040404 0.131313 0 0 0 0 0 42.118 199.654 33.5345 69.2793 91.2556
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.354 621.141 621.192 621.293 621.253 0.151515 0.0606061 0.010101 0.010101 0.040404 0 0 0 0 0 515.254 396.875 32.8801 91.7617 131.52
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.222 621.293 621.242 621.182 621.222 0.040404 0.0707071 0.030303 0.0909091 0.030303 0 0 0 0 0 114.619 166.708 60.3453 157.809 3.98507
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.242 621.081 621.202 621.111 621.141 0.0606061 0.0505051 0.010101 0.0606061 0.0808081 0 0 0 0 0 196.398 212.138 47.7664 68.7836 91.7115
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.283 621.212 621.232 621.162 621.222 0.0909091 0.131313 0.0505051 0.030303 0.0808081 0 0 0 0 0 56.9875 6.88831 46.6948 42.5092 165.179
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 621.192 621.222 621.121 621.172 621.081 0.20202 0.111111 0.0909091 0.040404 0.232323 0 0 0 0 0 156.787 85.8423 76.9636 34.67 178.442
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 621.172 621.152 621.212 621.111 621.141 0.0606061 0.111111 0.030303 0.0606061 0.111111 0 0 0 0 0 4.9298 140.159 68.5409 65.5663 114.601
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.293 621.222 621.121 621.172 621.232 0.040404 0.0808081 0.040404 0.151515 0.030303 0 0 0 0 0 381.873 673.577 291.131 978.996 231.745
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.222 621.162 621.242 621.162 621.293 0.0606061 0.0909091 0.030303 0.0505051 0.030303 0 0 0 0 0 1018.37 979.416 363.382 829.459 397.185
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.172 621.293 621.192 621.232 621.222 0.0707071 0.030303 0.0707071 0.10101 0.010101 0 0 0 0 0 26.6191 11.4082 31.2161 55.5222 4.45944
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+100 3.3 3.3 621.283 621.232 621.273 621.273 621.061 0.040404 0.111111 0.0505051 0.0909091 0.020202 0 0 0 0 0 134.43 144.627 183.681 274.462 26.2958
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.182 621.172 621.242 621.212 621.202 0.0606061 0.030303 0.0505051 0.0707071 0.0505051 0 0 0 0 0 1.98864 21.875 16.6263 32.4811 16.6263
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.101 621.242 621.192 621.081 621.172 0.10101 0.010101 0.010101 0.020202 0.030303 0 0 0 0 0 10338.7 2865.93 3591.96 5783.82 6409.38
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.101 621.253 621.121 621.162 621.232 0.010101 0.040404 0 0.020202 0 0 0 0 0 0 133.942 95.2027 0 111.618 0
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.333 621.273 621.283 621.192 621.152 0.0707071 0.030303 0.020202 0.181818 0.040404 0 0 0 0 0 233.27 59.9823 39.9882 449.855 129.435
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 621.212 621.232 621.232 621.313 621.192 0.0707071 0.0808081 0 0.030303 0.010101 0 0 0 0 0 27.1542 12.3737 0 21.1111 4.44571
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.212 621.253 621.172 621.141 621.283 0.191919 0.222222 0.0505051 0.0606061 0.0808081 0 0 0 0 0 419.085 420.143 129.288 169.748 173.226
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.212 621.172 621.374 621.162 621.212 0.010101 0.010101 0.0909091 0 0 0 0 0 0 0 2.9899 0.290909 19.5111 0 0
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 621.242 621.182 621.232 621.273 621.152 0.030303 0.010101 0.0606061 0.0505051 0.0505051 0 0 0 0 0 7.78596 53.1175 301.057 287.735 202.907
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.387s)
+100 3.3 3.3 621.061 621.152 621.162 621.273 621.242 0.020202 0.020202 0 0.030303 0.030303 0 0 0 0 0 313.481 624.857 0 754.312 484.915
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.253 621.121 621.172 621.152 621.242 0.020202 0.010101 0.010101 0.0606061 0.0606061 0 0 0 0 0 238.398 95.4826 0.147908 445.456 375.685
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 621.02 621.172 621.242 621.182 621.212 0.030303 0.0808081 0.010101 0.0707071 0.020202 0 0 0 0 0 377.366 689.573 66.991 468.937 203.934
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.354 621.283 621.172 621.192 621.152 0.121212 0.0909091 0.020202 0.0808081 0.10101 0 0 0 0 0 358.252 255.753 83.0668 473.419 289.147
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.384s)
+100 3.3 3.3 621.121 621.192 621.182 621.162 621.172 0.212121 0.0606061 0.161616 0.010101 0.020202 0 0 0 0 0 292.169 140.983 270.41 25.1449 51.9157
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.263 621.232 621.192 621.162 621.253 0.0909091 0.10101 0.0606061 0.0707071 0.0606061 0 0 0 0 0 4.57731 81.919 32.3186 33.2795 52.8385
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 621.101 621.263 621.212 621.212 621.121 0.141414 0.030303 0.111111 0.10101 0.0808081 0 0 0 0 0 104.69 31.0615 44.7528 116.101 32.5475
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 621.152 621.263 621.253 621.162 621.141 0.040404 0.0505051 0.040404 0.191919 0.040404 0 0 0 0 0 561.02 617.014 594.143 1160.87 644.051
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.182 621.051 621.242 621.253 621.212 0.151515 0.151515 0.0606061 0.040404 0.040404 0 0 0 0 0 438.915 333.786 209.438 212.465 144.387
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.212 621.263 621.172 621.263 621.202 0.0606061 0.212121 0.0606061 0.0707071 0.0606061 0 0 0 0 0 243.894 522.593 270.261 299.332 225.072
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.283 621.172 621.131 621.182 621.172 0.0606061 0.0808081 0.161616 0.111111 0.0505051 0 0 0 0 0 50.3484 37.0559 164.076 54.7005 23.1599
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 621.192 621.111 621.162 621.172 621.263 0.040404 0.010101 0.0505051 0.010101 0.0707071 0 0 0 0 0 2305.8 675.698 2327.89 479.081 1819.48
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.383s)
+100 3.3 3.3 621.081 621.212 621.071 621.222 621.182 0.030303 0.0505051 0.010101 0.020202 0.040404 0 0 0 0 0 417.273 745.565 6.95455 364.165 563.316
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.03 621.101 621.253 621.242 621.212 0.040404 0.10101 0.10101 0.010101 0.0606061 0 0 0 0 0 34.7667 132.419 86.6917 13.7411 6.95334
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.091 621.172 621.202 621.192 621.061 0.121212 0.10101 0.0707071 0.0909091 0.0707071 0 0 0 0 0 340.368 249.26 261.723 227.85 267.591
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.366s)
+100 3.3 3.3 621.242 621.162 621.212 621.182 621.242 0.171717 0.0707071 0.0505051 0.121212 0.0505051 0 0 0 0 0 662.53 345.297 318.644 463.081 239.705
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.253 621.202 621.212 621.182 621.212 0.0707071 0.111111 0.030303 0.0505051 0.0606061 0 0 0 0 0 212.655 148.637 102.819 67.5624 250.92
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.364 621.333 621.242 621.162 621.182 0.151515 0.0707071 0.141414 0.121212 0.121212 0 0 0 0 0 77.2371 36.044 92.0697 93.9347 125.037
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.091 620.98 621.03 621.202 621.172 0.0808081 0.0606061 0.010101 0.040404 0.171717 0 0 0 0 0 650.86 406.964 111.736 364.795 934.865
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.333 621.242 621.222 621.242 621.202 0.0909091 0.151515 0.111111 0.10101 0.161616 0 0 0 0 0 331.297 368.276 277.408 276.595 424.74
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 621.162 621.253 621.172 621.101 621.152 0.030303 0.040404 0.0808081 0.141414 0.020202 0 0 0 0 0 424.417 569.15 1104.23 1372.28 346.657
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621.263 621.222 621.152 621.182 621.141 0.111111 0.0606061 0.131313 0.131313 0.10101 0 0 0 0 0 16.5031 4.14754 24.7896 20.545 5.78602
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.172 621.111 621.283 621.202 621.071 0.0505051 0 0.040404 0.020202 0 0 0 0 0 0 75.9481 -nan 61.3333 0.46176 0
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.222 621.152 621.081 621.172 621.202 0.030303 0.10101 0.10101 0.0606061 0.0505051 0 0 0 0 0 56.1217 128.693 172.915 91.7011 5.60592
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+100 3.3 3.3 621.172 621.354 621.253 621.192 621.182 0.0808081 0.0505051 0.040404 0.030303 0.242424 0 0 0 0 0 348.352 234.417 250.814 255.044 525.448
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.202 621.222 621.131 621.273 621.121 0.0909091 0.131313 0.111111 0.10101 0.0505051 0 0 0 0 0 374.241 457.999 344.043 377.537 255.995
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.152 621.172 621.273 621.222 621.202 0.020202 0.0707071 0.0505051 0.030303 0.0606061 0 0 0 0 0 177.593 374.559 161.111 78.8294 157.659
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 621.242 621.182 621.111 621.152 621.283 0.131313 0.0707071 0.040404 0.161616 0.151515 0 0 0 0 0 132.089 91.2387 59.5252 170.838 141.049
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 621.192 621.253 621.242 621.232 621.121 0.030303 0 0.020202 0.020202 0.0808081 0 0 0 0 0 545.874 0 207.42 207.42 1333.15
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 621.242 621.253 621.121 621.03 621.283 0.131313 0.030303 0.151515 0.131313 0.040404 0 0 0 0 0 436.225 130.241 523.499 410.64 225.686
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 621.293 621.101 621.111 621.253 621.202 0.0707071 0.10101 0.0808081 0.020202 0.0808081 0 0 0 0 0 128.067 105.16 106.482 42.0579 6.83091
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 618.919 620.242 617.081 614.616 618.545 0.111111 0.020202 0.141414 0.0505051 0.121212 0 0 0 0 0 660.859 183.041 1097.57 336.823 1049.98
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 618.071 619.505 616.101 616.293 618.313 0.121212 0.0707071 0.171717 0.151515 0.292929 0 0 0 0 0 115.252 72.3688 207.087 139.59 196.202
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 617.646 620.051 618.273 616.98 620.889 0.030303 0.0707071 0.010101 0.131313 0.0909091 0 0 0 0 0 4.23409 59.2773 19.2682 137.7 100.719
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 620.737 620.323 620.192 619.848 616.737 0.131313 0.0505051 0.020202 0.0505051 0.0606061 0 0 0 0 0 227.596 114.869 26.6458 166.928 79.9373
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 619.444 618.697 616.96 618.434 619.99 0.0808081 0.0505051 0.0606061 0.0606061 0.0909091 0 0 0 0 0 23.7907 14.865 17.838 45.7481 26.7645
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 619.071 620.212 619.657 620.939 619.182 0.0707071 0.040404 0.151515 0.0808081 0.0606061 0 0 0 0 0 619.099 434.817 1075 682.066 694.726
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 617.838 619.333 620.707 617.949 617.768 0.121212 0.0808081 0.111111 0.0808081 0.0808081 0 0 0 0 0 51.7172 82.3112 115.723 34.4781 75.9795
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 619.283 620.576 620.697 618.616 619.596 0.0808081 0.0707071 0.030303 0.040404 0.0505051 0 0 0 0 0 230.973 334.802 256.47 361.875 144.358
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 615.677 620.576 616.98 618.788 620.626 0.10101 0.0808081 0.222222 0.0606061 0.141414 0 0 0 0 0 362.93 327.989 487.622 183.37 383.458
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.367s)
+100 3.3 3.3 620.293 618.212 618.848 618.556 620.162 0.020202 0.020202 0.0808081 0.0505051 0.0505051 0 0 0 0 0 50.1818 21.2318 46.8327 12.8864 15.3409
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 619.778 620.333 620.707 618.03 617.98 0.141414 0.0707071 0.131313 0.020202 0.030303 0 0 0 0 0 46.4594 17.9469 31.9942 4.92219 7.69152
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+100 3.3 3.3 620.131 620.768 619.172 620.626 620.232 0.020202 0.030303 0.040404 0.040404 0.0505051 0 0 0 0 0 2270.91 2323.66 3162.37 2329.64 3868.13
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 619.535 621.192 617.687 619.455 620.404 0.040404 0.0505051 0.030303 0.010101 0.040404 0 0 0 0 0 3996.61 3721.86 2780.45 996.419 3625.24
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 615.98 615.586 618.97 617.525 618.404 0.161616 0.0707071 0.20202 0.10101 0.151515 0 0 0 0 0 330.635 171.933 445.473 254.403 282.714
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+100 3.3 3.3 620.788 620.899 620.737 620.495 618.293 0.181818 0.040404 0.171717 0.0909091 0.121212 0 0 0 0 0 441.555 121.105 476.312 330.612 409.651
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.383s)
+100 3.3 3.3 618.101 619.061 618.758 617.727 616.121 0.232323 0.222222 0.151515 0.0606061 0.252525 0 0 0 0 0 212.225 172.232 129.656 63.8663 186.758
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+100 3.3 3.3 619.717 620.717 620.121 620.061 620.424 0.0606061 0.191919 0.111111 0.0606061 0.0909091 0 0 0 0 0 379.521 1416.43 532.686 358.82 778.286
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 615.859 618.364 621.364 613.505 615.182 0.0808081 0.0606061 0.121212 0.0606061 0.121212 0 0 0 0 0 726.009 620.607 820.753 864.417 1091.89
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 617.404 617.152 619.616 620.717 617.758 0.151515 0.0505051 0.0505051 0.0707071 0.030303 0 0 0 0 0 1248.67 638.367 767.766 558.179 388.2
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 619.778 620.778 618.778 617.172 621.051 0.0505051 0.040404 0.030303 0.141414 0.020202 0 0 0 0 0 628.312 299.488 413.826 1206.94 149.744
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 619.374 618.626 618.394 619.273 620.99 0.131313 0.161616 0.040404 0.121212 0.0606061 0 0 0 0 0 572.836 716.836 192.023 494.674 374.824
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 620.939 619.889 620.596 616.616 619.061 0.0707071 0.0707071 0.111111 0.0707071 0.0909091 0 0 0 0 0 251.881 196.84 264.126 259.253 251.22
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.372s)
+100 3.3 3.3 614.242 620.323 621.03 619.838 617.99 0.10101 0.0909091 0.0808081 0.0909091 0.151515 0 0 0 0 0 292.713 235.57 302.358 174.345 325.637
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 620.303 619.798 614.929 620.303 619.414 0.111111 0.030303 0.040404 0.030303 0.030303 0 0 0 0 0 293.928 97.7592 7.15181 62.7887 94.6563
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 619.606 618.939 619.828 618.495 619.162 0.0707071 0.020202 0.030303 0.0505051 0.0707071 0 0 0 0 0 979.839 637.137 752.803 1362.22 1731.7
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 619.04 620.869 617.99 618.263 618.808 0.121212 0.020202 0.010101 0.0707071 0.030303 0 0 0 0 0 180.15 30.025 101.703 358.349 236.019
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.368s)
+100 3.3 3.3 619.384 621.242 618.818 619.232 617.727 0.0505051 0.10101 0.121212 0 0.010101 0 0 0 0 0 2062.51 2299.6 3130.45 0 345.887
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 620.303 616.899 615.273 620.01 620.071 0.0707071 0.0505051 0 0.030303 0.0808081 0 0 0 0 0 3217 3189.08 0 1354.09 2732.58
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 617.323 621.232 619.333 614.182 617.717 0.0909091 0.222222 0.0707071 0.0505051 0.030303 0 0 0 0 0 535.249 903.716 360.284 379.359 200.909
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.383s)
+100 3.3 3.3 616.919 620.071 620.99 618.889 620.778 0.020202 0.040404 0.040404 0.040404 0.010101 0 0 0 0 0 309.072 497.957 427.45 1011.01 3.67225
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 619.242 620.162 619.98 620.172 619.273 0.0909091 0.121212 0.121212 0.111111 0.0606061 0 0 0 0 0 356.556 427.738 575.931 415.785 250.568
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 619.798 616.909 620.848 619.465 619.061 0.0505051 0.020202 0.0909091 0.0505051 0.0808081 0 0 0 0 0 1139.4 459.84 1966.72 1455.64 1891.23
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.388s)
+100 3.3 3.3 616.364 617.98 619.758 619.071 617.192 0.121212 0.141414 0.0505051 0.0909091 0.0808081 0 0 0 0 0 180.755 127.655 26.5816 47.8468 81.697
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 621 618.99 616.182 619.121 620.758 0.020202 0.131313 0.0505051 0.020202 0.0505051 0 0 0 0 0 5.27662 74.351 34.5765 6.00519 28.7688
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 619.566 619.414 619.091 619.545 620.091 0.191919 0.0808081 0.0606061 0.10101 0.141414 0 0 0 0 0 249.67 138.389 96.8877 194.37 208.887
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.396s)
+100 3.3 3.3 620.626 620.505 618.717 614.131 614.758 0.121212 0.121212 0.141414 0.0909091 0.121212 0 0 0 0 0 420.149 424.753 546.3 312.369 412.327
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.391s)
+100 3.3 3.3 619.374 619.596 621.192 616.374 619.111 0.0606061 0.0505051 0.0707071 0.141414 0.0909091 0 0 0 0 0 86.147 37.8917 93.4405 204.136 68.2051
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 619.717 618.303 614.485 620.172 619.535 0.0505051 0.0606061 0.040404 0.040404 0.0707071 0 0 0 0 0 344.573 462.005 130.178 382.56 227.812
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.372s)
+100 3.3 3.3 618.354 619.253 619.384 619.485 615.97 0.0808081 0.010101 0.111111 0.0909091 0.151515 0 0 0 0 0 605.806 68.7998 671.939 503.999 1113.6
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.388s)
+100 3.3 3.3 616.677 616.889 618.848 617.434 619.788 0.171717 0 0.0707071 0.0505051 0.10101 0 0 0 0 0 653.898 0 295.605 276.196 310.204
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.370s)
+100 3.3 3.3 619.727 619.071 619.141 617.949 619.737 0.131313 0.121212 0.10101 0.0707071 0.010101 0 0 0 0 0 1031 956.781 944.722 1167.18 170.909
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 620.131 619.646 620.869 617.354 619.152 0.0505051 0.040404 0.020202 0.0808081 0.030303 0 0 0 0 0 156.116 352.023 62.4464 509.663 201.065
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 620.505 619.394 619.04 620.707 619.515 0.121212 0.0707071 0.10101 0.141414 0.141414 0 0 0 0 0 157.456 109.117 150.166 186.392 227.899
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.385s)
+100 3.3 3.3 620.192 619.293 618.374 620.899 617.879 0.040404 0.131313 0.0606061 0.030303 0.020202 0 0 0 0 0 517.022 757.878 893.953 301.865 292.594
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 615.616 617.182 618.606 617.646 620.192 0.010101 0.0707071 0.10101 0.0505051 0.121212 0 0 0 0 0 135.943 1028.94 1185.71 708.982 1291.21
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 619.616 620.182 617.848 618.98 620.283 0.0505051 0.0808081 0.010101 0.121212 0.0505051 0 0 0 0 0 591.305 971.684 152.607 1193.92 558.682
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.384s)
+100 3.3 3.3 621.071 620.525 620.596 618.545 620.899 0.141414 0.121212 0.0606061 0.0808081 0.131313 0 0 0 0 0 456.491 404.355 442.069 291.622 584.967
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 619.97 620.02 617.697 616.111 618.303 0.181818 0.232323 0.151515 0.131313 0.0707071 0 0 0 0 0 196.126 268.339 170.997 167.924 100.177
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.371s)
+100 3.3 3.3 617.657 621.192 616.667 619.141 619.929 0.030303 0.040404 0.0606061 0.040404 0.030303 0 0 0 0 0 4.78859 174.412 174.441 220.208 93.1598
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 621.162 620.333 619.434 620.323 617.616 0.0606061 0.040404 0 0.0909091 0.0808081 0 0 0 0 0 234.236 67.0849 0 228.38 188.38
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 526.414 527.03 528.343 527.899 529.374 1.62626 1.54545 1.9899 1.81818 1.89899 0 0 0 0 0 449.47 423.793 549.118 506.831 489.953
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.367s)
+100 3.3 3.3 525.313 530.707 527.697 530.01 527.414 1.50505 1.74747 1.57576 1.60606 1.70707 0 0 0 0 0 504.403 571.869 535.381 534.292 556.093
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 530.525 529.465 528.485 529.616 527.98 1.68687 1.47475 1.66667 1.69697 1.94949 0 0 0 0 0 494.831 445.143 475.485 468.434 553.206
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.371s)
+100 3.3 3.3 529.788 530.939 529.404 530.828 530.414 1.36364 1.61616 1.67677 1.81818 1.64646 0 0 0 0 0 427.822 517.397 511.523 563.995 520.907
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.371s)
+100 3.3 3.3 529.131 529.747 529.768 530.485 527.737 1.45455 1.71717 1.54545 1.63636 1.81818 0 0 0 0 0 456.567 511.887 476.779 506.272 545.854
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 530.303 531.182 532 531.283 529.354 1.62626 1.53535 1.40404 1.54545 1.57576 0 0 0 0 0 549.521 504.552 474.134 506.844 518.968
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.417s)
+100 3.3 3.3 524.263 528.364 530.111 533.03 528.808 1.79798 1.54545 1.54545 1.84848 1.77778 0 0 0 0 0 536.328 471.847 464.881 538.101 527.509
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 535.162 533.263 527.586 529.616 529.212 1.50505 1.54545 1.64646 1.44444 1.57576 0 0 0 0 0 534.322 557.224 620.113 558.023 579.955
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 530.182 528.747 532.889 528.677 527 1.76768 1.76768 1.45455 1.79798 1.43434 0 0 0 0 0 567.285 576.567 471.498 561.963 480.043
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 531.929 532.303 527.131 530.495 528.323 1.59596 1.60606 1.74747 1.70707 1.64646 0 0 0 0 0 451.282 461.734 481.166 464.468 456.6
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.369s)
+100 3.3 3.3 529.172 530.394 532.556 528.02 528.414 1.66667 1.50505 1.79798 1.57576 1.58586 0 0 0 0 0 538.073 493.306 585.548 496.615 507.694
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 531.828 531.808 527.899 529.495 530.495 1.38384 1.40404 1.64646 1.68687 1.65657 0 0 0 0 0 490.755 508.231 577.264 573.915 561.373
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 532.343 532.313 531.101 531.586 529.222 1.41414 1.71717 1.74747 1.57576 1.38384 0 0 0 0 0 502.332 588.893 590.072 544.238 488.96
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 523.919 528.566 527.475 527.717 526.98 1.90909 1.65657 1.79798 1.48485 1.60606 0 0 0 0 0 627.743 550.902 581.483 520.812 546.744
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 532.596 533.424 528.717 529.99 530.202 1.41414 1.68687 1.15152 1.67677 1.77778 0 0 0 0 0 502.898 568.107 452.402 611.635 630.749
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 527.677 527.586 528.869 528.535 530.414 1.94949 1.66667 1.73737 1.42424 1.47475 0 0 0 0 0 596.776 569.188 569.082 488.759 482.24
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 530.545 529.848 533.444 526.333 533.97 1.9596 1.32323 1.35354 1.33333 1.47475 0 0 0 0 0 791.007 569.226 570.255 618.264 631.328
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 525.808 526.97 526.313 528.889 528.485 1.66667 1.74747 1.63636 1.65657 2.05051 0 0 0 0 0 519.757 540.444 503.355 511.454 588.22
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 527.727 531.525 532.222 531.101 525.273 1.43434 1.72727 1.57576 1.39394 1.86869 0 0 0 0 0 533.222 586.162 538.268 515.815 649.702
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 528.525 527.162 532.222 528.909 531.808 1.38384 1.32323 1.66667 1.78788 1.75758 0 0 0 0 0 491.831 468.171 594.208 604.962 598.976
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.387s)
+100 3.3 3.3 532.818 529.838 528.899 527.354 528.939 1.85859 1.66667 1.53535 1.85859 1.64646 0 0 0 0 0 494.173 455.483 410.081 473.08 434.837
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 531.444 530.687 528.96 525.111 532.131 1.39394 1.75758 1.67677 1.45455 1.84848 0 0 0 0 0 483.718 569.996 546.399 512.788 618.48
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 529.404 531.707 530.192 527.556 529.798 1.62626 1.58586 1.53535 1.51515 1.55556 0 0 0 0 0 571.67 563.658 532.754 542.784 533.328
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 530.455 531.808 531.828 528.222 526.121 1.51515 1.51515 1.54545 1.73737 1.44444 0 0 0 0 0 552.345 545.285 545.695 607.11 513.752
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 530.152 527.242 528.929 533.808 527.525 1.65657 1.77778 1.65657 1.50505 1.65657 0 0 0 0 0 506.026 522.964 503.966 438.972 520.938
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.388s)
+100 3.3 3.3 527.313 525.838 532.545 531.707 527.535 1.75758 1.55556 1.67677 1.58586 1.68687 0 0 0 0 0 508.04 482.358 501.366 461.203 485.776
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 530.545 532.939 530.606 527.343 530.505 1.35354 1.60606 1.47475 1.41414 1.66667 0 0 0 0 0 553.525 643.9 575.035 576.736 649.38
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 529.545 527.677 529.475 531.879 527.172 1.76768 1.50505 1.64646 1.77778 1.81818 0 0 0 0 0 514.481 464.929 493.906 528.003 529.137
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 531.869 529.707 528.212 531.111 526.465 1.79798 1.39394 1.49495 1.70707 1.62626 0 0 0 0 0 612.092 541.148 566.914 600.388 611.233
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.378s)
+100 3.3 3.3 529.283 529.97 531.121 529.091 531.98 1.52525 1.71717 1.57576 1.57576 1.54545 0 0 0 0 0 525.615 556.58 527.638 519.077 507.218
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.401s)
+100 3.3 3.3 529.717 527.576 531.242 532.838 530.051 1.54545 1.39394 1.73737 1.47475 1.59596 0 0 0 0 0 563.757 525.287 589.374 538.589 567.129
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 530.697 536 528.131 530.889 528.253 1.67677 1.79798 1.49495 1.43434 1.51515 0 0 0 0 0 504.735 542.201 463.462 451.776 469.492
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 525.03 526.919 526.798 530.889 532.394 1.36364 1.72727 1.66667 1.46465 1.64646 0 0 0 0 0 545.546 648.539 629.169 565.094 586.861
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.375s)
+100 3.3 3.3 530.717 531.646 529.424 528.253 526.232 1.61616 1.59596 1.43434 1.86869 1.54545 0 0 0 0 0 518.442 528.251 491.923 581.205 513.433
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.366s)
+100 3.3 3.3 528.778 531.485 528.202 531.081 533.263 1.43434 1.49495 1.46465 1.45455 1.44444 0 0 0 0 0 606.975 623.21 626.685 611.994 596.25
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.374s)
+100 3.3 3.3 528.505 530.323 527.869 529.545 525.03 1.53535 1.73737 1.73737 1.85859 1.88889 0 0 0 0 0 436.671 491.73 510.579 493.647 520.672
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.384s)
+100 3.3 3.3 530.929 527.202 526.253 532.162 529.566 1.50505 1.51515 1.40404 1.47475 1.73737 0 0 0 0 0 553.363 572.164 551.311 546.511 630.83
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 529.616 528.495 528.889 529.202 527.768 1.73737 1.52525 1.54545 1.67677 1.75758 0 0 0 0 0 563.342 519.491 515.897 572.818 577.707
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.376s)
+100 3.3 3.3 528.091 529.343 531.939 527.758 529.101 1.84848 1.65657 1.83838 1.63636 2.18182 0 0 0 0 0 473.385 447.173 459.784 431.957 541.826
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 529.96 531.687 528.939 524.879 526.727 1.58586 1.89899 1.80808 1.48485 1.53535 0 0 0 0 0 488.004 533.898 537.614 476.161 471.863
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.398s)
+100 3.3 3.3 529.727 531.111 531.949 528.636 528.394 1.70707 1.61616 1.59596 1.66667 1.49495 0 0 0 0 0 508.354 493.079 487.343 491.277 481.219
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.388s)
+100 3.3 3.3 529.273 527.556 533.131 533.192 534.646 1.44444 1.36364 1.73737 1.58586 1.43434 0 0 0 0 0 509.937 507.192 599.608 581.759 519.573
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.379s)
+100 3.3 3.3 532.616 532.828 530.343 527.303 530.687 1.74747 1.68687 1.58586 1.47475 1.50505 0 0 0 0 0 549.668 552.267 499.911 491.927 498.395
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.373s)
+100 3.3 3.3 529.172 528.99 529.071 529.566 534.343 1.66667 1.80808 1.51515 1.71717 1.84848 0 0 0 0 0 478.956 472.299 425.54 472.845 509.361
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.387s)
+100 3.3 3.3 527.434 529.768 527.768 530.596 528.909 1.61616 1.56566 1.77778 1.93939 1.41414 0 0 0 0 0 505.197 503.832 541.134 574.488 453.581
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.380s)
+100 3.3 3.3 532.889 529.727 528.485 527.929 529.263 1.61616 1.55556 1.39394 1.46465 1.42424 0 0 0 0 0 617.892 594.642 556.14 587.062 586.649
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.381s)
+100 3.3 3.3 529.919 533.081 527.131 534.242 529.778 1.36364 1.49495 1.56566 1.84848 1.61616 0 0 0 0 0 522.41 583.343 586.324 641.615 601.281
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.377s)
+100 3.3 3.3 527.273 528.253 530.323 531.545 527.788 1.87879 1.65657 1.59596 1.73737 1.73737 0 0 0 0 0 568.998 499.251 472.997 510.491 519.165
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.382s)
+100 3.3 3.3 530.182 529.323 529.111 532.212 529.798 1.33333 1.52525 1.71717 1.48485 1.44444 0 0 0 0 0 525.759 595.485 651.147 561.015 570.462
+Waf: Entering directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Waf: Leaving directory `/home/yirong/Desktop/NS3/ns-3-allinone/ns-3.30/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.367s)
+100 3.3 3.3 530.818 529.667 531.657 532.131 527.818 1.70707 2.21212 1.61616 1.44444 1.68687 0 0 0 0 0 455.985 572.82 440.599 404.38 469.589
