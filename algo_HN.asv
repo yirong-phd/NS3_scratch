@@ -52,11 +52,10 @@ for i = 1:Nsim
 end
 
 figure;
-scatter(c_rate_neighbor(:,1),KL)
+scatter(sum(c_rate_neighbor,2),KL)
 hold on
 for i=2:3
-    scatter(c_rate_neighbor(:,i),KL)
-end
+    scatter()
 figure;
 scatter(c_rate_N,KL)
 

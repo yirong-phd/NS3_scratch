@@ -46,42 +46,71 @@ T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
 %T_clear = T_clear(3:end);
 sim = str2num(char(T_clear)); % numbers
 
-run_time = 30;
+run_time = 100;
 Nsim = round((length(sim))/run_time);
 error = zeros(Nsim,5);
+p_rate = zeros(Nsim,5);
 
 sim_time = zeros(Nsim,1);
 
 for i = 1:Nsim
     sim_time(i) = sim(run_time*i,1);
     for j = 1:5
+        p_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
         error(i,j) = sum((sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,18+j)).^2)/run_time;
         %error(i,j) = error(i,j) / (sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
     end
     
 end
 
-
 figure;
-plot(sim_time, error(:,1),'-.*','LineWidth',1)
+subplot(1,2,1)
+plot(sim_time, (error(:,1)),'-.*','LineWidth',5)
 hold on
 for i=2:5
-    plot(sim_time,error(:,i),'-.*','LineWidth',1)
+    plot(sim_time, (error(:,i)),'-.*','LineWidth',5)
 end
+grid on
+xlabel("Observation Time (s)",'FontSize',28)
+ylabel("Mean Square Error",'FontSize',28)
+title("MSE v.s. Observation Time",'FontSize',28)
+lgd = legend("link 1","link 2","link 3","link 4","link 5");
+lgd.FontSize = 24;
+set(gca,'FontSize',24)
 
-figure;
-plot(log(sim_time),log(error(:,1)),'-.*','LineWidth',1)
+subplot(1,2,2)
+plot(log(sim_time),log(error(:,1)),'-.*','LineWidth',5,'DisplayName','Link 1')
 hold on
-P = polyfit(log(sim_time(1:end)),log(error(1:end,1)),1);
-yfit = P(1)*log(sim_time)+P(2); display(P(1))
-plot(log(sim_time),yfit,'r-.');
+%P = polyfit(log(sim_time(30:end)),log(error(30:end,1)),1);
+%yfit = P(1)*log(sim_time)+P(2); display(P(1))
+%plot(log(sim_time),yfit,'-.');
 
-for i=2:5
-    plot(log(sim_time),log(error(:,i)),'-.*','LineWidth',1)
-    P = polyfit(log(sim_time(1:end)),log(error(1:end,i)),1); display(P(1))
-    yfit = P(1)*log(sim_time)+P(2);
-    plot(log(sim_time),yfit,'r-.');
-end
+plot(log(sim_time),log(error(:,2)),'-.*','LineWidth',5,'DisplayName','Link 2')
+%P = polyfit(log(sim_time(40:end)),log(error(40:end,2)),1); display(P(1))
+%yfit = P(1)*log(sim_time)+P(2);
+%plot(log(sim_time),yfit,'-.');
+
+plot(log(sim_time),log(error(:,3)),'-.*','LineWidth',5,'DisplayName','Link 3')
+%P = polyfit(log(sim_time(10:end)),log(error(10:end,3)),1); display(P(1))
+%yfit = P(1)*log(sim_time)+P(2);
+%plot(log(sim_time),yfit,'-.');
+
+plot(log(sim_time),log(error(:,4)),'-.*','LineWidth',5,'DisplayName','Link 4')
+%P = polyfit(log(sim_time(40:end)),log(error(40:end,4)),1); display(P(1))
+%yfit = P(1)*log(sim_time)+P(2);
+%plot(log(sim_time),yfit,'-.');
+
+plot(log(sim_time),log(error(:,5)),'-.*','LineWidth',5,'DisplayName','Link 5')
+%P = polyfit(log(sim_time(1:end)),log(error(1:end,5)),1); display(P(1))
+%yfit = P(1)*log(sim_time)+P(2);
+%plot(log(sim_time),yfit,'-.');
+grid on
+xlabel("log(T)",'FontSize',28)
+ylabel("log(MSE)",'FontSize',28)
+title("MSE v.s. Observation Time (log-log plot)",'FontSize',28)
+lgd = legend("link 1","link 2","link 3","link 4","link 5");
+lgd.FontSize = 24;
+set(gca,'FontSize',24)
 %%
 clear; clc;
 file = './indep_5l_T.txt';
