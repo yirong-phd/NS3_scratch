@@ -230,7 +230,9 @@ delta_shuffle = delta(idx);
 Delta = [delta,delta_shuffle];
 writematrix(Delta,"./deltaHN.txt");
 %%
+delta_ex = linspace(4.1,4.4,20)';
+writematrix(delta_ex,"./deltaHN_ex.txt");
 %time = linspace(20,100,50)';
 %writematrix(time,'./time2.txt');
-means = logspace(-3,-1,30)';
-writematrix(means,'./ia_means_3l.txt');
+%means = logspace(-3,-1,30)';
+%writematrix(means,'./ia_means_3l.txt');

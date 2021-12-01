@@ -44,9 +44,9 @@ for i = 1:Nsim
     c_rate_N(i) = sum(c_rate(i,:).*p_rate(i,:))/sum(p_rate(i,:));
 end
 
-c_rate_neighbor = zeros(Nsim,3);
+c_rate_neighbor = zeros(Nsim,5);
 for i = 1:Nsim
-    for id = 1:3
+    for id = 1:5
         c_rate_neighbor(i,id) = sum(c_rate(i,:).*p_rate(i,:)) - c_rate(i,id).*p_rate(i,id);
     end
 end
@@ -54,15 +54,16 @@ end
 figure;
 scatter(c_rate_neighbor(:,1),KL)
 hold on
-for i=2:3
+for i=2:5
     scatter(c_rate_neighbor(:,i),KL)
 end
+
 figure;
 scatter(c_rate_N,KL)
 
 figure;
-plot(c_rate_neighbor(:,1),sqrt(error(:,1)))
+scatter(c_rate_neighbor(:,1),sqrt(error(:,1)))
 hold on
-for i=2:3
-    plot(c_rate_neighbor(:,i),sqrt(error(:,i)))
+for i=2:5
+    scatter(c_rate_neighbor(:,i),sqrt(error(:,i)))
 end

@@ -143,17 +143,12 @@ end
 
 %% Plot for 5-link cases:
 clear; clc;
-file = './five_link_load.txt';
+file = './five_link_load1.txt';
 T = textread(file,'%s','delimiter','\n');
-T_clear = T(~cellfun(@(x) any(isletter(x)),T)); % get rid of sentances
+T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
 sim = str2num(char(T_clear)); % numbers
 
-file1 = './five_link_load1.txt';
-T1 = textread(file1,'%s','delimiter','\n');
-T_clear1 = T1(~cellfun(@(x) any(isletter(x(1:2))),T1)); % get rid of sentances
-sim1 = str2num(char(T_clear1)); % numbers
-
-sim = [sim1;sim];
+%sim = [sim1;sim];
 
 run_time = 50;
 Nsim = round((length(sim))/run_time);
@@ -182,30 +177,30 @@ for i = 1:Nsim
 end
 
 figure;
-semilogy(sr_rate(:,1),sqrt(error(:,1)),'-.*','LineWidth',3);
+semilogy(sr_rate(:,1),sqrt(error(:,1)),'-.*','LineWidth',5);
 hold on
 for id = 2:5
-    plot(sr_rate(:,id),sqrt(error(:,id)),'-.*','LineWidth',3);
+    plot(sr_rate(:,id),sqrt(error(:,id)),'-.*','LineWidth',5);
 end
-xlabel('Spatial Reuse Rate (%)','FontSize',28)
-ylabel('Normalized Error (%)','FontSize',28)
+xlabel('Spatial Reuse Rate','FontSize',34)
+ylabel('Normalized Error','FontSize',34)
 grid on
 lgd = legend("link 1","link 2","link 3","link 4","link 5",'Location','Northwest');
-lgd.FontSize = 24;
-set(gca,'Fontsize',24)
+lgd.FontSize = 34;
+set(gca,'Fontsize',32)
 
 figure;
-semilogy(Th_norm(:,1),sqrt(error(:,1)),'-.*','LineWidth',3);
+semilogy(Th_norm(:,1),sqrt(error(:,1)),'-.*','LineWidth',5);
 hold on
 for id = 2:5
-    plot(Th_norm(:,id),sqrt(error(:,id)),'-.*','LineWidth',3);
+    plot(Th_norm(:,id),sqrt(error(:,id)),'-.*','LineWidth',5);
 end
-xlabel('Normalized Link Throughput (%)','FontSize',28)
-ylabel('Normalized Error (%)','FontSize',28)
+xlabel('Normalized Link Throughput','FontSize',34)
+ylabel('Normalized Error','FontSize',34)
 grid on
 lgd = legend("link 1","link 2","link 3","link 4","link 5",'Location','Northwest');
-lgd.FontSize = 24;
-set(gca,'Fontsize',24)
+lgd.FontSize = 34;
+set(gca,'Fontsize',32)
 
 
 figure;
