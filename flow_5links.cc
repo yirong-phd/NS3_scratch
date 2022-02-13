@@ -223,7 +223,7 @@ static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
 			Ptr<Packet> data_packet = Create<Packet> (pktSize);
       AddSrc(srctable,data_packet->GetUid(),socket->GetNode()->GetId());
 			socket->Send(data_packet);
-      Simulator::Schedule (Seconds(0.0014+pktInterval->GetValue()), &GenerateTraffic,
+      Simulator::Schedule (Seconds(pktInterval->GetValue()), &GenerateTraffic,
                            socket, pktSize, pktCount - 1, pktInterval, mean);
     }
   else
@@ -406,17 +406,33 @@ int main (int argc, char *argv[]){
   Ptr<ListPositionAllocator> positionAlloc_tx = CreateObject<ListPositionAllocator>();
   Ptr<ListPositionAllocator> positionAlloc_rx = CreateObject<ListPositionAllocator>();
 
+
+  positionAlloc_tx->Add(Vector(11.0, 2.0, 0.0));
+  positionAlloc_tx->Add(Vector(11.0, delta2+1, 0.0));  // HN for flow 1&2
+  positionAlloc_tx->Add(Vector(21.0, 1.0, 0.0));
+  positionAlloc_tx->Add(Vector(36.0, delta4-1, 0.0)); // EN for flow 4&5 (direct interference)
+  positionAlloc_tx->Add(Vector(46.0, 2.0, 0.0));
+
+  positionAlloc_rx->Add(Vector(11.0, 3.0, 0.0));
+  positionAlloc_rx->Add(Vector(11.0, delta2, 0.0));
+  positionAlloc_rx->Add(Vector(21.0, 2.0, 0.0));
+  positionAlloc_rx->Add(Vector(36.0, delta4, 0.0));
+  positionAlloc_rx->Add(Vector(46.0, 1.0, 0.0));
+
+
+  /*
   positionAlloc_tx->Add(Vector(1.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(11.0, delta2, 0.0));
-  positionAlloc_tx->Add(Vector(11.0, 1.0, 0.0));
-  positionAlloc_tx->Add(Vector(36.0, delta4, 0.0));
-  positionAlloc_tx->Add(Vector(36.0, 1.0, 0.0));
+  positionAlloc_tx->Add(Vector(2.0, 4.0, 0.0));
+  positionAlloc_tx->Add(Vector(3.0, 4.0, 0.0));
+  positionAlloc_tx->Add(Vector(9.0, 4.0, 0.0)); // EN for flow 4&5 (direct interference)
+  positionAlloc_tx->Add(Vector(10.0, 4.0, 0.0));
 
   positionAlloc_rx->Add(Vector(1.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(11.0, delta2-1.0, 0.0));
-  positionAlloc_rx->Add(Vector(11.0, 2.0, 0.0));
-  positionAlloc_rx->Add(Vector(36.0, delta4-1.0, 0.0));
-  positionAlloc_rx->Add(Vector(36.0, 2.0, 0.0));
+  positionAlloc_rx->Add(Vector(2.0, 3.5, 0.0));
+  positionAlloc_rx->Add(Vector(3.0, 3.5, 0.0));
+  positionAlloc_rx->Add(Vector(9.0, 3.5, 0.0));
+  positionAlloc_rx->Add(Vector(10.0, 3.5, 0.0));
+  */
 
   mobility_tx.SetPositionAllocator(positionAlloc_tx);
   mobility_tx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
@@ -655,7 +671,10 @@ int main (int argc, char *argv[]){
 
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
-    for(int i=0; i<= 24; i++) {std::cout << cg[i] << " ";}
+    //for(int i=0; i<= 24; i++) {std::cout << cg[i] << " ";}
+    std::cout << "Error:" << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
+              << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << "\n";
+    std::cout << "C_rate:" << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]);
   }
   else if(outputmode == 2){
     double Npkt_link1 = Npkt_ob[0]*(1 + GetSoP(cg,r,0)); double Npkt_link3 = Npkt_ob[2]*(1 + GetSoP(cg,r,2)); double Npkt_link5 = Npkt_ob[4]*(1 + GetSoP(cg,r,4));
@@ -665,7 +684,7 @@ int main (int argc, char *argv[]){
     //          << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " " << Npkt_link3*1.0/(sim_time - 1) << " " << Npkt_link4*1.0/(sim_time - 1) <<
     //          << " " << Npkt_link5*1.0/(sim_time - 1) << "\n";
 
-    std::cout << sim_time << " " << Topology_Run << " " << mean << " "
+    std::cout << sim_time << " " << delta2 << " " << mean << " "
               << Npkt[0]*1.0/(sim_time - 1) << " " << Npkt[1]*1.0/(sim_time - 1) << " " << Npkt[2]*1.0/(sim_time - 1) << " "
               << Npkt[3]*1.0/(sim_time - 1) << " " << Npkt[4]*1.0/(sim_time - 1) << " "
               << Npkt_ob[0]*1.0/(sim_time - 1) << " " << Npkt_ob[1]*1.0/(sim_time - 1) << " " << Npkt_ob[2]*1.0/(sim_time - 1) << " "

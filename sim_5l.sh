@@ -13,7 +13,7 @@ do
     do
         echo "The run number:" $run
         # run sim
-        NS_GLOBAL_VALUE="RngRun=$run""" ./waf --run "scratch/flow_5links -sim_time=50 -ia_mean=0.01 -delta2=$line1 -delta4=$line2 -outputmode=2 -TopologyRun=1" >> five_link_HN.txt
+        NS_GLOBAL_VALUE="RngRun=$run""" ./waf --run "scratch/flow_5links -sim_time=50 -ia_mean=0.01 -prop_loss=2 -delta2=$line1 -delta4=$line2 -outputmode=2 -TopologyRun=1" >> five_link_HN.txt
     done
   done < $filename
 done < $filename
