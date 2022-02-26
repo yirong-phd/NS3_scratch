@@ -271,6 +271,7 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
     if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
       int i = getOneActive(status), j = getOneActive(p2);
       cg_count[5*i+j]++; cg_count[5*j+i]++;
+      //if((i==0 && j==1) || (j==0 && i==1)) {NS_LOG_UNCOND("Flow 1&2 cg_count ++ !!!");}
     }
 
   }
@@ -292,9 +293,13 @@ void PhyTxEnd(int nodeID){
   std::copy(p1,p1+5,p2);  //p2 = p1
   std::copy(status,status+5,p1); //p1 = status
   status[nodeID] = false;
+  //NS_LOG_UNCOND("The p2: " << p2[0] << " " << p2[1] << " " << p2[2] << " " << p2[3] << " " << p2[4] << std::endl);
+  //NS_LOG_UNCOND("The p1: " << p1[0] << " " << p1[1] << " " << p1[2] << " " << p1[3] << " " << p1[4] << std::endl);
+  //NS_LOG_UNCOND("The status: " << status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
   if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
     int i = getOneActive(status), j = getOneActive(p2);
     cg_count[5*i+j]++; cg_count[5*j+i]++;
+    //if((i==0 && j==1) || (j==0 && i==1)) {NS_LOG_UNCOND("Flow 1&2 cg_count ++ !!!");}
   }
 }
 
@@ -321,6 +326,7 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
       if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
         int i = getOneActive(status), j = getOneActive(p2);
         cg_count[5*i+j]++; cg_count[5*j+i]++;
+        //if((i==0 && j==1) || (j==0 && i==1)) {NS_LOG_UNCOND("Flow 1&2 cg_count ++ !!!");}
       }
 
       //increment the packet number tracker:
@@ -356,6 +362,7 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
         if(NumActive(p2) == 1 && NumActive(status) == 1 && NumActive(p1) > 1){
           int i = getOneActive(status), j = getOneActive(p2);
           cg_count[5*i+j]++; cg_count[5*j+i]++;
+          //if((i==0 && j==1) || (j==0 && i==1)) {NS_LOG_UNCOND("Flow 1&2 cg_count ++ !!!");}
         }
       }
       else if(reason == 2 || reason == 5) {
@@ -406,7 +413,7 @@ int main (int argc, char *argv[]){
   Ptr<ListPositionAllocator> positionAlloc_tx = CreateObject<ListPositionAllocator>();
   Ptr<ListPositionAllocator> positionAlloc_rx = CreateObject<ListPositionAllocator>();
 
-
+  /*
   positionAlloc_tx->Add(Vector(11.0, 2.0, 0.0));
   positionAlloc_tx->Add(Vector(11.0, delta2+1, 0.0));  // HN for flow 1&2
   positionAlloc_tx->Add(Vector(21.0, 1.0, 0.0));
@@ -418,21 +425,21 @@ int main (int argc, char *argv[]){
   positionAlloc_rx->Add(Vector(21.0, 2.0, 0.0));
   positionAlloc_rx->Add(Vector(36.0, delta4, 0.0));
   positionAlloc_rx->Add(Vector(46.0, 1.0, 0.0));
+  */
 
 
-  /*
   positionAlloc_tx->Add(Vector(1.0, 4.0, 0.0));
   positionAlloc_tx->Add(Vector(2.0, 4.0, 0.0));
   positionAlloc_tx->Add(Vector(3.0, 4.0, 0.0));
   positionAlloc_tx->Add(Vector(9.0, 4.0, 0.0)); // EN for flow 4&5 (direct interference)
   positionAlloc_tx->Add(Vector(10.0, 4.0, 0.0));
 
-  positionAlloc_rx->Add(Vector(1.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(2.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(3.0, 3.5, 0.0));
+  positionAlloc_rx->Add(Vector(1.0, 3.8, 0.0));
+  positionAlloc_rx->Add(Vector(2.0, 3.8, 0.0));
+  positionAlloc_rx->Add(Vector(3.0, 3.8, 0.0));
   positionAlloc_rx->Add(Vector(9.0, 3.5, 0.0));
   positionAlloc_rx->Add(Vector(10.0, 3.5, 0.0));
-  */
+
 
   mobility_tx.SetPositionAllocator(positionAlloc_tx);
   mobility_tx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
@@ -478,11 +485,10 @@ int main (int argc, char *argv[]){
   YansWifiChannelHelper channel = YansWifiChannelHelper::Default ();
   channel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
   if(prop_loss == 1){
-    channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(1.6));
+    //channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(1.1));
   }
   else if(prop_loss == 2){
-    channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
-    //channel.AddPropagationLoss("ns3::LogDistancePropagationLossModel");
+    //channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
   }
 
   YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default ();
@@ -603,6 +609,7 @@ int main (int argc, char *argv[]){
     if (a == b) {cg_count[i] = 0;}
   }
 
+  /*
   double t0 = *std::min_element(cg_count,cg_count+25);
   double t1 = *std::max_element(cg_count,cg_count+25);
   //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
@@ -630,7 +637,7 @@ int main (int argc, char *argv[]){
     //std::cout << "New Threshold: " << t0_new << " and threshold: " << t1_new << std::endl;
     flag = 1;
   }
-
+  */
   //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
   /*
   for(int i=0; i<=24; i++){
@@ -638,9 +645,10 @@ int main (int argc, char *argv[]){
       {cg[i] = 0;}
   }
   */
-
+  //double count_max = *std::max_element(cg_count,cg_count+25);
   for(int i=0; i<=24; i++){
-    if(cg_count[i] >= 1)
+    //cg_count[i] = cg_count[i]/count_max;
+    if(cg_count[i] >= 1) // a pre-defined threshold here.
       {cg[i] = 0;}
   }
 
@@ -671,7 +679,7 @@ int main (int argc, char *argv[]){
 
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
-    //for(int i=0; i<= 24; i++) {std::cout << cg[i] << " ";}
+    for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";} std::cout << "\n";
     std::cout << "Error:" << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
               << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << "\n";
     std::cout << "C_rate:" << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]);

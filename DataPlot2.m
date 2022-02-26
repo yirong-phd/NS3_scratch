@@ -43,7 +43,7 @@ clear; clc;
 file = './five_link_T.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
-%T_clear = T_clear(3:end);
+T_clear = T_clear(3:end);
 sim = str2num(char(T_clear)); % numbers
 
 run_time = 100;
@@ -58,16 +58,16 @@ for i = 1:Nsim
     for j = 1:5
         p_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
         error(i,j) = sum((sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,18+j)).^2)/run_time;
-        %error(i,j) = error(i,j) / (sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
+        error(i,j) = error(i,j) / (sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
     end
     
 end
 
 figure;
-plot(sim_time, (error(:,1)),'-.*','LineWidth',5)
+plot(sim_time, sqrt(error(:,1)),'-.*','LineWidth',5)
 hold on
 for i=2:5
-    plot(sim_time, (error(:,i)),'-.*','LineWidth',5)
+    plot(sim_time, sqrt(error(:,i)),'-.*','LineWidth',5)
 end
 grid on
 xlabel("Observation Time (s)",'FontSize',34)
