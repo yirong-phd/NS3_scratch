@@ -235,9 +235,9 @@ delta2 = linspace(3.1,3.23,20)';
 delta_ex = [delta2;delta1];
 writematrix(delta_ex,"./deltaHN.txt");
 %%
-time = logspace(-1,2,80)';
+time = logspace(2,2.3,50)';
 time = time + 1;
 %time = linspace(20,100,50)';
-writematrix(time,'./time.txt');
+writematrix(time,'./time2.txt');
 %means = logspace(-3,-1,30)';
 %writematrix(means,'./ia_means_3l.txt');

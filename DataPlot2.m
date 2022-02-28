@@ -78,28 +78,28 @@ lgd.FontSize = 34;
 set(gca,'FontSize',32)
 
 figure;
-loglog((sim_time),(error(:,1)),'-.*','LineWidth',5,'DisplayName','flow 1')
+plot(log(sim_time),log(error(:,1)),'-.*','LineWidth',5,'DisplayName','flow 1')
 hold on
 %P = polyfit(log(sim_time(30:end)),log(error(30:end,1)),1);
 %yfit = P(1)*log(sim_time)+P(2); display(P(1))
 %plot(log(sim_time),yfit,'-.');
 
-loglog((sim_time),(error(:,2)),'-.*','LineWidth',5,'DisplayName','flow 2')
+plot(log(sim_time),log(error(:,2)),'-.*','LineWidth',5,'DisplayName','flow 2')
 %P = polyfit(log(sim_time(40:end)),log(error(40:end,2)),1); display(P(1))
 %yfit = P(1)*log(sim_time)+P(2);
 %plot(log(sim_time),yfit,'-.');
 
-loglog((sim_time),(error(:,3)),'-.*','LineWidth',5,'DisplayName','flow 3')
+plot(log(sim_time),log(error(:,3)),'-.*','LineWidth',5,'DisplayName','flow 3')
 %P = polyfit(log(sim_time(10:end)),log(error(10:end,3)),1); display(P(1))
 %yfit = P(1)*log(sim_time)+P(2);
 %plot(log(sim_time),yfit,'-.');
 
-loglog((sim_time),(error(:,4)),'-.*','LineWidth',5,'DisplayName','flow 4')
+plot(log(sim_time),log(error(:,4)),'-.*','LineWidth',5,'DisplayName','flow 4')
 %P = polyfit(log(sim_time(40:end)),log(error(40:end,4)),1); display(P(1))
 %yfit = P(1)*log(sim_time)+P(2);
 %plot(log(sim_time),yfit,'-.');
 
-loglog((sim_time),(error(:,5)),'-.*','LineWidth',5,'DisplayName','flow 5')
+plot(log(sim_time),log(error(:,5)),'-.*','LineWidth',5,'DisplayName','flow 5')
 %P = polyfit(log(sim_time(1:end)),log(error(1:end,5)),1); display(P(1))
 %yfit = P(1)*log(sim_time)+P(2);
 %plot(log(sim_time),yfit,'-.');
@@ -110,6 +110,21 @@ ylabel("log(MSE)",'FontSize',34)
 lgd = legend("flow 1","flow 2","flow 3","flow 4","flow 5");
 lgd.FontSize = 34;
 set(gca,'FontSize',32)
+% Testing the slope of best-fit linear curve in log-log scale:
+P = polyfit(log(sim_time(23:end)),log((error(23:end,1))),1);
+yfit = P(1)*log(sim_time(23:end))+P(2); display(P(1));
+
+for i=2:5
+    %plot(log(sim_time(53:end)),log((error(53:end,i))),'-.*','LineWidth',1)
+    P = polyfit(log(sim_time(23:end)),log((error(23:end,i))),1);
+    if i == 2
+        P = polyfit(log(sim_time(13:end)),log((error(13:end,i))),1);
+    end
+    yfit = P(1)*log(sim_time(13:end))+P(2); display(P(1));
+    plot(log(sim_time(13:end)),yfit,'r-.');
+end
+%%
+plot(yfit)
 %%
 clear; clc;
 file = './indep_5l_T.txt';
