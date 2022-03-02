@@ -241,8 +241,8 @@ int ContextToNodeId(std::string context) {
 // Tracer callbacks:
 void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
-    //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-    //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+    NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+    NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
     //record the past ia times of link that about to Tx:
     if(prev_ia[ContextToNodeId(context)] != 0){
@@ -279,8 +279,8 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 
 // tracer function to keep track of collided packet's finish time
 void PhyTxEnd(int nodeID){
-  //NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
-  //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+  NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
+  NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
   //record the past on times of link that just finish its Tx:
   if(prev_on[nodeID] != 0){
@@ -307,8 +307,8 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
   if (p->GetSize() == 1064) {
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
-      //NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-      //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+      NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+      NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       //record the past on times of link that just finish its Tx:
       if(prev_on[idx] != 0){
@@ -341,8 +341,8 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
 
-        //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
-        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+        NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
+        NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       Npkt_drop[ContextToNodeId(context)-5] ++;
       if (reason == 3) {
@@ -389,6 +389,7 @@ int main (int argc, char *argv[]){
   uint16_t outputmode = 1;
   uint16_t Topology_Run = 1;
   uint16_t Sim_Run = 1;
+  uint16_t top = 1;
 
   CommandLine cmd;
   cmd.AddValue ("sim_time", "simulation time in seconds", sim_time);
@@ -398,7 +399,7 @@ int main (int argc, char *argv[]){
   cmd.AddValue ("outputmode", "selecte the output format: 1 reader friendly 2 for matlab", outputmode);
   cmd.AddValue ("ia_mean", "the mean value of the exponentially distributed pkt inter-arrival times", mean);
   cmd.AddValue ("TopologyRun", "the mean value of the exponentially distributed pkt inter-arrival times", Topology_Run);
-  cmd.AddValue ("SimRun", "the mean value of the exponentially distributed pkt inter-arrival times", Sim_Run);
+  cmd.AddValue ("top", "the topology index for test with HN collision", top);
   cmd.Parse(argc, argv);
 
   Ptr<ExponentialRandomVariable> interval = CreateObject<ExponentialRandomVariable> ();
@@ -407,7 +408,6 @@ int main (int argc, char *argv[]){
 
   NodeContainer txer,rxer;
   txer.Create (5); rxer.Create(5);
-
 
   MobilityHelper mobility_tx,mobility_rx;
   Ptr<ListPositionAllocator> positionAlloc_tx = CreateObject<ListPositionAllocator>();
@@ -426,20 +426,103 @@ int main (int argc, char *argv[]){
   positionAlloc_rx->Add(Vector(36.0, delta4, 0.0));
   positionAlloc_rx->Add(Vector(46.0, 1.0, 0.0));
   */
+  if(top == 1) {
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(5.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(9.0, 2.0, 0.0));
 
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(5.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(9.0, 3.0, 0.0));
+  }
+  else if(top == 2) {
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(9.0, 2.0, 0.0));
 
-  positionAlloc_tx->Add(Vector(1.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(2.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(3.0, 4.0, 0.0));
-  positionAlloc_tx->Add(Vector(9.0, 4.0, 0.0)); // EN for flow 4&5 (direct interference)
-  positionAlloc_tx->Add(Vector(10.0, 4.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(9.0, 3.0, 0.0));
+  }
 
-  positionAlloc_rx->Add(Vector(1.0, 3.8, 0.0));
-  positionAlloc_rx->Add(Vector(2.0, 3.8, 0.0));
-  positionAlloc_rx->Add(Vector(3.0, 3.8, 0.0));
-  positionAlloc_rx->Add(Vector(9.0, 3.5, 0.0));
-  positionAlloc_rx->Add(Vector(10.0, 3.5, 0.0));
+  else if(top == 3) {
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 4.3, 0.0));
 
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.3, 0.0));
+  }
+
+  else if(top == 4) {
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(2.3, 3.15, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(9.0, 2.0, 0.0));
+
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(1.3, 3.15, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(9.0, 3.0, 0.0));
+  }
+
+  else if(top == 5) {
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(2.3, 3.15, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 4.3, 0.0));
+
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(1.3, 3.15, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.3, 0.0));
+  }
+
+  else if(top == 6) {
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(2.3, 3.15, 0.0));
+    positionAlloc_tx->Add(Vector(-0.3, 3.15, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 4.3, 0.0));
+
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(1.3, 3.15, 0.0));
+    positionAlloc_rx->Add(Vector(0.7, 3.15, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.3, 0.0));
+  }
+
+  else if(top == 7) {
+    double r = 1.15; double R = 0.15;
+    positionAlloc_tx->Add(Vector(1.0+r*cos(0.4*PI), 3.15+r*sin(0.4*PI), 0.0));
+    positionAlloc_tx->Add(Vector(1.0+r*cos(0.8*PI), 3.15+r*sin(0.8*PI), 0.0));
+    positionAlloc_tx->Add(Vector(1.0+r*cos(1.2*PI), 3.15+r*sin(1.2*PI), 0.0));
+    positionAlloc_tx->Add(Vector(1.0+r*cos(1.6*PI), 3.15+r*sin(1.6*PI), 0.0));
+    positionAlloc_tx->Add(Vector(1.0+r*cos(2.0*PI), 3.15+r*sin(2.0*PI), 0.0));
+
+    positionAlloc_rx->Add(Vector(1.0+R*cos(0.4*PI), 3.15+R*sin(0.4*PI), 0.0));
+    positionAlloc_rx->Add(Vector(1.0+R*cos(0.8*PI), 3.15+R*sin(0.8*PI), 0.0));
+    positionAlloc_rx->Add(Vector(1.0+R*cos(1.2*PI), 3.15+R*sin(1.2*PI), 0.0));
+    positionAlloc_rx->Add(Vector(1.0+R*cos(1.6*PI), 3.15+R*sin(1.6*PI), 0.0));
+    positionAlloc_rx->Add(Vector(1.0+R*cos(2.0*PI), 3.15+R*sin(2.0*PI), 0.0));
+  }
 
   mobility_tx.SetPositionAllocator(positionAlloc_tx);
   mobility_tx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
@@ -448,7 +531,6 @@ int main (int argc, char *argv[]){
   mobility_rx.SetPositionAllocator(positionAlloc_rx);
   mobility_rx.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
   mobility_rx.Install(rxer);
-
 
   /*
   RngSeedManager::SetRun (Topology_Run);
@@ -485,10 +567,10 @@ int main (int argc, char *argv[]){
   YansWifiChannelHelper channel = YansWifiChannelHelper::Default ();
   channel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
   if(prop_loss == 1){
-    //channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(1.1));
+    channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(1.1));
   }
   else if(prop_loss == 2){
-    //channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
+    channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
   }
 
   YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default ();
@@ -519,7 +601,6 @@ int main (int argc, char *argv[]){
   ipv4.SetBase ("10.0.0.0", "255.255.255.0");
   Ipv4InterfaceContainer nodeInterface;
   nodeInterface = ipv4.Assign (devices);
-
 
   //Install Applications: 5 single-hop flows
   //int flow_src[5] = {0,1,2,3,4}; int flow_dst[5] = {5,6,7,8,9};
@@ -571,7 +652,8 @@ int main (int argc, char *argv[]){
 
   wifiPhy.EnablePcap("wifiA",devices.Get(0));
   wifiPhy.EnablePcap("wifiB",devices.Get(1));
-  wifiPhy.EnablePcap("wifiD",devices.Get(3));
+
+  wifiPhy.EnablePcap("wifiB_recv",devices.Get(6));
   wifiPhy.EnablePcap("wifiA_recv",devices.Get(5));
 
   Simulator::Stop (Seconds (sim_time));
@@ -637,28 +719,28 @@ int main (int argc, char *argv[]){
     //std::cout << "New Threshold: " << t0_new << " and threshold: " << t1_new << std::endl;
     flag = 1;
   }
-  */
+
   //std::cout << "Threshold: " << t0 << " and threshold: " << t1 << std::endl;
-  /*
+
   for(int i=0; i<=24; i++){
     if(pow(cg_count[i]-t1,2) < pow(cg_count[i]-t0,2) && (i%5 != i/5))
       {cg[i] = 0;}
   }
   */
-  //double count_max = *std::max_element(cg_count,cg_count+25);
+
+  double count_max = *std::max_element(cg_count,cg_count+25);
   for(int i=0; i<=24; i++){
-    //cg_count[i] = cg_count[i]/count_max;
-    if(cg_count[i] >= 1) // a pre-defined threshold here.
+    cg_count[i] = cg_count[i]/count_max;
+    if(cg_count[i] >= 0.1) // a pre-defined threshold here.
       {cg[i] = 0;}
   }
-
 
   // computation of r and r_empirical:
   for (int i=0; i<=4; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
     on[i] = on[i]/N_on[i];
     ia[i] = ia[i]/N_ia[i];
-    std::cout << "For link " << i << " Avg. ON: " << on[i] << " Avg. IA: " << ia[i] << std::endl;
+    //std::cout << "For link " << i << " Avg. ON: " << on[i] << " Avg. IA: " << ia[i] << std::endl;
   }
 
   double collision[5] = {0,0,0,0,0}; double total_pkt[5] = {0,0,0,0,0}; double sr = 0;
@@ -679,7 +761,9 @@ int main (int argc, char *argv[]){
 
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
+
     for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";} std::cout << "\n";
+
     std::cout << "Error:" << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
               << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << "\n";
     std::cout << "C_rate:" << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]);
@@ -700,8 +784,11 @@ int main (int argc, char *argv[]){
               << collision[0]*1.0/(sim_time - 1) << " " << collision[1]*1.0/(sim_time - 1) << " " << collision[2]*1.0/(sim_time - 1) << " "
               << collision[3]*1.0/(sim_time - 1) << " " << collision[4]*1.0/(sim_time - 1) << " "
               << Npkt_link1*1.0/(sim_time - 1) << " " << Npkt_link2*1.0/(sim_time - 1) << " " << Npkt_link3*1.0/(sim_time - 1) << " "
-              << Npkt_link4*1.0/(sim_time - 1) << " " << Npkt_link5*1.0/(sim_time - 1) << "\n";
+              << Npkt_link4*1.0/(sim_time - 1) << " " << Npkt_link5*1.0/(sim_time - 1) << " "
+              << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
+              << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << " "
+              << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]) << "\n";
   }
-  //for(int i=0; i<=24; i++){ std::cout << cg[i] << ' ';}
+  //for(int i=0; i<=24; i++){ std::cout << cg_count[i] << ' ';}
   return 0;
 }
