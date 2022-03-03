@@ -133,7 +133,7 @@ for i=2:5
 end
 %%
 clear; clc;
-file = './5l_HN_top7.txt';
+file = './5l_HN_top2.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
 T_clear = T_clear(3:end);
@@ -148,7 +148,7 @@ c_rate = zeros(Nsim,5);
 c_rate_N = zeros(Nsim,1);
 c_rate_sum = zeros(Nsim,1);
 sr = zeros(Nsim,5);
-
+sr_sum = zeros(Nsim,1);
 
 for i = 1:Nsim
     sim_time(i) = sim(run_time*i,1); delta(i) = sim(run_time*i,2);
@@ -156,10 +156,11 @@ for i = 1:Nsim
         p_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
         p_rate_est(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,18+j))/run_time;
         error(i,j) = sum((sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,18+j)).^2)/run_time;
-        error(i,j) = error(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
+        %error(i,j) = error(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
         c_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,13+j))/run_time;
         c_rate(i,j) = c_rate(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time);
 
         sr(i,j) = 1 - sum(sim(run_time*(i-1)+1:run_time*i,8+j)./sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
     end
+    sr_sum(i) = 1 - sum(sum(sim(run_time*(i-1)+1:run_time*i,9:13),2)./sum(sim(run_time*(i-1)+1:run_time*i,4:8),2))/run_time;
 end
