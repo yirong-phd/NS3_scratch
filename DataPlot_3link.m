@@ -239,5 +239,5 @@ time = logspace(2,2.3,50)';
 time = time + 1;
 writematrix(time,'./time2.txt');
 %%
-means = linspace(0.002,0.02,50)';
-writematrix(means,'./ia_means_top7.txt');
+means = linspace(0.002,0.1,80)';
+writematrix(means,'./ia_means_top2.txt');

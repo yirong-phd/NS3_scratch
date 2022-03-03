@@ -147,8 +147,6 @@ error = zeros(Nsim,5);
 c_rate = zeros(Nsim,5);
 c_rate_N = zeros(Nsim,1);
 c_rate_sum = zeros(Nsim,1);
-sr = zeros(Nsim,5);
-
 
 for i = 1:Nsim
     sim_time(i) = sim(run_time*i,1); delta(i) = sim(run_time*i,2);
@@ -156,10 +154,9 @@ for i = 1:Nsim
         p_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
         p_rate_est(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,18+j))/run_time;
         error(i,j) = sum((sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,18+j)).^2)/run_time;
-        error(i,j) = error(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
+        %error(i,j) = error(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
         c_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,13+j))/run_time;
         c_rate(i,j) = c_rate(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time);
-
-        sr(i,j) = 1 - sum(sim(run_time*(i-1)+1:run_time*i,8+j)./sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
     end
+    sr(i) = sim(run_time*(i-1)+1:run_time*i,8+j)
 end

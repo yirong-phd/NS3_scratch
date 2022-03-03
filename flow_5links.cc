@@ -241,8 +241,8 @@ int ContextToNodeId(std::string context) {
 // Tracer callbacks:
 void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
-    NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-    NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+    //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+    //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
     //record the past ia times of link that about to Tx:
     if(prev_ia[ContextToNodeId(context)] != 0){
@@ -279,8 +279,8 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 
 // tracer function to keep track of collided packet's finish time
 void PhyTxEnd(int nodeID){
-  NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
-  NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+  //NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
+  //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
   //record the past on times of link that just finish its Tx:
   if(prev_on[nodeID] != 0){
@@ -307,8 +307,8 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
   if (p->GetSize() == 1064) {
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
-      NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-      NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+      //NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+      //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       //record the past on times of link that just finish its Tx:
       if(prev_on[idx] != 0){
@@ -341,8 +341,8 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
 
-        NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
-        NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+        //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
+        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       Npkt_drop[ContextToNodeId(context)-5] ++;
       if (reason == 3) {
@@ -413,19 +413,20 @@ int main (int argc, char *argv[]){
   Ptr<ListPositionAllocator> positionAlloc_tx = CreateObject<ListPositionAllocator>();
   Ptr<ListPositionAllocator> positionAlloc_rx = CreateObject<ListPositionAllocator>();
 
-  /*
-  positionAlloc_tx->Add(Vector(11.0, 2.0, 0.0));
-  positionAlloc_tx->Add(Vector(11.0, delta2+1, 0.0));  // HN for flow 1&2
-  positionAlloc_tx->Add(Vector(21.0, 1.0, 0.0));
-  positionAlloc_tx->Add(Vector(36.0, delta4-1, 0.0)); // EN for flow 4&5 (direct interference)
-  positionAlloc_tx->Add(Vector(46.0, 2.0, 0.0));
+  if(top == 0) {  //The case without HN yet direct interference (for sim_T.sh testing)
+    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(2.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(8.0, 2.0, 0.0));
 
-  positionAlloc_rx->Add(Vector(11.0, 3.0, 0.0));
-  positionAlloc_rx->Add(Vector(11.0, delta2, 0.0));
-  positionAlloc_rx->Add(Vector(21.0, 2.0, 0.0));
-  positionAlloc_rx->Add(Vector(36.0, delta4, 0.0));
-  positionAlloc_rx->Add(Vector(46.0, 1.0, 0.0));
-  */
+    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(2.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(8.0, 3.0, 0.0));
+  }
+
   if(top == 1) {
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
@@ -441,13 +442,13 @@ int main (int argc, char *argv[]){
   }
   else if(top == 2) {
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.05, 0.0));
     positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(9.0, 2.0, 0.0));
 
     positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.05, 0.0));
     positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
     positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
     positionAlloc_rx->Add(Vector(9.0, 3.0, 0.0));
@@ -455,44 +456,44 @@ int main (int argc, char *argv[]){
 
   else if(top == 3) {
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.05, 0.0));
     positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(7.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 4.05, 0.0));
 
     positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.05, 0.0));
     positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
     positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(7.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.05, 0.0));
   }
 
   else if(top == 4) {
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
-    positionAlloc_tx->Add(Vector(2.3, 3.15, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.05, 0.0));
+    positionAlloc_tx->Add(Vector(2.05, 3.05, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(9.0, 2.0, 0.0));
 
     positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
-    positionAlloc_rx->Add(Vector(1.3, 3.15, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.05, 0.0));
+    positionAlloc_rx->Add(Vector(1.05, 3.05, 0.0));
     positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
     positionAlloc_rx->Add(Vector(9.0, 3.0, 0.0));
   }
 
   else if(top == 5) {
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(1.0, 4.3, 0.0));
-    positionAlloc_tx->Add(Vector(2.3, 3.15, 0.0));
+    positionAlloc_tx->Add(Vector(1.0, 4.05, 0.0));
+    positionAlloc_tx->Add(Vector(2.05, 3.05, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(7.0, 4.3, 0.0));
+    positionAlloc_tx->Add(Vector(7.0, 4.05, 0.0));
 
     positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(1.0, 3.3, 0.0));
-    positionAlloc_rx->Add(Vector(1.3, 3.15, 0.0));
+    positionAlloc_rx->Add(Vector(1.0, 3.05, 0.0));
+    positionAlloc_rx->Add(Vector(1.05, 3.05, 0.0));
     positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(7.0, 3.3, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 3.05, 0.0));
   }
 
   else if(top == 6) {
@@ -510,7 +511,7 @@ int main (int argc, char *argv[]){
   }
 
   else if(top == 7) {
-    double r = 1.15; double R = 0.15;
+    double r = 1.01; double R = 0.01;
     positionAlloc_tx->Add(Vector(1.0+r*cos(0.4*PI), 3.15+r*sin(0.4*PI), 0.0));
     positionAlloc_tx->Add(Vector(1.0+r*cos(0.8*PI), 3.15+r*sin(0.8*PI), 0.0));
     positionAlloc_tx->Add(Vector(1.0+r*cos(1.2*PI), 3.15+r*sin(1.2*PI), 0.0));
