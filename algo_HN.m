@@ -136,7 +136,7 @@ clear; clc;
 file = './5l_HN_top2.txt';
 T = textread(file,'%s','delimiter','\n');
 T_clear = T(~cellfun(@(x) any(isletter(x(1:2))),T)); % get rid of sentances
-T_clear = T_clear(3:end);
+%T_clear = T_clear(3:end);
 sim = str2num(char(T_clear)); % get numbers
 
 run_time = 100;
@@ -144,9 +144,12 @@ Nsim = round((length(sim))/run_time);
 p_rate = zeros(Nsim,5);
 p_rate_est = zeros(Nsim,5);
 error = zeros(Nsim,5);
+N_error = zeros(Nsim,5);
 c_rate = zeros(Nsim,5);
-c_rate_N = zeros(Nsim,1);
-c_rate_sum = zeros(Nsim,1);
+c_rate_total = zeros(Nsim,1);
+c_rate_avg = zeros(Nsim,1);
+
+KL = zeros(Nsim,1);
 sr = zeros(Nsim,5);
 sr_sum = zeros(Nsim,1);
 
@@ -156,11 +159,32 @@ for i = 1:Nsim
         p_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
         p_rate_est(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,18+j))/run_time;
         error(i,j) = sum((sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,18+j)).^2)/run_time;
-        %error(i,j) = error(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j).^2)/run_time);
-        c_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,13+j))/run_time;
-        c_rate(i,j) = c_rate(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time);
 
+        N_error(i,j) = (sum(abs(sim(run_time*(i-1)+1:run_time*i,3+j) - sim(run_time*(i-1)+1:run_time*i,18+j)))/run_time)/p_rate(i,j);
+        c_rate(i,j) = sum(sim(run_time*(i-1)+1:run_time*i,13+j) ./ sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
+        %c_rate(i,j) = c_rate(i,j)/(sum(sim(run_time*(i-1)+1:run_time*i,3+j))/run_time);
+        
         sr(i,j) = 1 - sum(sim(run_time*(i-1)+1:run_time*i,8+j)./sim(run_time*(i-1)+1:run_time*i,3+j))/run_time;
     end
     sr_sum(i) = 1 - sum(sum(sim(run_time*(i-1)+1:run_time*i,9:13),2)./sum(sim(run_time*(i-1)+1:run_time*i,4:8),2))/run_time;
 end
+
+for i = 1:Nsim
+    p_rate(i,:) = p_rate(i,:)./sum(p_rate(i,:));
+    p_rate_est(i,:) = p_rate_est(i,:)./sum(p_rate_est(i,:));
+
+    KL(i) = sum(p_rate(i,:).*sqrt(error(i,:)));
+    c_rate_total(i) = sum(c_rate(i,:).*p_rate(i,:))/sum(p_rate(i,:));
+    c_rate_avg(i) = (c_rate(i,1)*p_rate(i,1) + c_rate(i,2)*p_rate(i,2))/(p_rate(i,1)+p_rate(i,2));
+end
+
+figure;
+plot3(c_rate_avg,sr_sum,N_error(:,1))
+hold on
+for i = 2:5
+    plot3(c_rate_avg,sr_sum,N_error(:,i))
+end
+grid on
+xlabel('The collision rate within legitimate network','FontSize',24);
+ylabel('The collision rate at the observer','FontSize',24);
+zlabel('The normalized error rate','FontSize',24);

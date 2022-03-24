@@ -241,8 +241,8 @@ int ContextToNodeId(std::string context) {
 // Tracer callbacks:
 void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
-    //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-    //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+    NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+    NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
     //record the past ia times of link that about to Tx:
     if(prev_ia[ContextToNodeId(context)] != 0){
@@ -279,8 +279,8 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 
 // tracer function to keep track of collided packet's finish time
 void PhyTxEnd(int nodeID){
-  //NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
-  //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+  NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
+  NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
   //record the past on times of link that just finish its Tx:
   if(prev_on[nodeID] != 0){
@@ -307,8 +307,8 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
   if (p->GetSize() == 1064) {
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
-      //NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-      //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+      NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+      NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       //record the past on times of link that just finish its Tx:
       if(prev_on[idx] != 0){
@@ -341,8 +341,8 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
 
-        //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
-        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+        NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
+        NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       Npkt_drop[ContextToNodeId(context)-5] ++;
       if (reason == 3) {
@@ -416,13 +416,13 @@ int main (int argc, char *argv[]){
   if(top == 0) {  //The case without HN yet direct interference (for sim_T.sh testing)
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(2.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(2.3, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(8.0, 2.0, 0.0));
 
-    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(0.9, 2.8, 0.0));
     positionAlloc_rx->Add(Vector(2.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(2.5, 2.5, 0.0));
     positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
     positionAlloc_rx->Add(Vector(8.0, 3.0, 0.0));
   }
@@ -647,6 +647,8 @@ int main (int argc, char *argv[]){
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyRxEnd" , MakeCallback(&PhyRx));
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyRxDrop",MakeCallback(&PhyRxDrop));
 
+  Config::Set("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/FrameCaptureModel/$ns3::SimpleFrameCaptureModel/Margin",DoubleValue(-5000));
+
   // Install FlowMonitor on all nodes
   FlowMonitorHelper flowmon;
   Ptr<FlowMonitor> monitor = flowmon.InstallAll ();
@@ -763,7 +765,7 @@ int main (int argc, char *argv[]){
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
 
-    for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";} std::cout << "\n";
+    for(int i=0; i<= 24; i++) {std::cout << cg[i] << " ";} std::cout << "\n";
 
     std::cout << "Error:" << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
               << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << "\n";
