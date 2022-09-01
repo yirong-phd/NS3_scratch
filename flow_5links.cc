@@ -21,6 +21,8 @@ using namespace ns3;
 //int Nflow = 5;
 double Npkt[5] = {0,0,0,0,0}; double Npkt_ob[5] = {0,0,0,0,0}; double Npkt_rx[5] = {0,0,0,0,0}; double Npkt_drop[5] = {0,0,0,0,0};
 
+double N_enqueue[5] = {0,0,0,0,0}; double N_backlog[5] = {0,0,0,0,0};
+
 double prev_on[5] = {0,0,0,0,0}; double prev_ia[5] = {0,0,0,0,0};
 double ia[5] = {0,0,0,0,0}; double on[5] = {0,0,0,0,0};
 double N_on[5] = {0,0,0,0,0}; double N_ia[5] = {0,0,0,0,0};
@@ -206,16 +208,16 @@ void ReceivePacket (Ptr<Socket> socket)
     }
 }
 static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
-                             uint32_t pktCount, Ptr<ExponentialRandomVariable> pktInterval, double mean)
+                             uint32_t pktCount, Ptr<ExponentialRandomVariable> pktInterval, double mean, double mean2)
 {
   if (pktCount > 0)
     {
       //RngSeedManager::SetRun(2);
-      if(socket->GetNode()->GetId() == 1) {
+      if(socket->GetNode()->GetId() == 0) {
         pktInterval->SetAttribute ("Mean", DoubleValue (mean));
       }
-      else if(socket->GetNode()->GetId() == 2) {
-        pktInterval->SetAttribute ("Mean", DoubleValue(mean));
+      else if(socket->GetNode()->GetId() == 1) {
+        pktInterval->SetAttribute ("Mean", DoubleValue(mean2));
       }
       else {
         pktInterval->SetAttribute ("Mean", DoubleValue(mean));
@@ -224,7 +226,7 @@ static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
       AddSrc(srctable,data_packet->GetUid(),socket->GetNode()->GetId());
 			socket->Send(data_packet);
       Simulator::Schedule (Seconds(pktInterval->GetValue()), &GenerateTraffic,
-                           socket, pktSize, pktCount - 1, pktInterval, mean);
+                           socket, pktSize, pktCount - 1, pktInterval, mean, mean2);
     }
   else
     {
@@ -241,8 +243,8 @@ int ContextToNodeId(std::string context) {
 // Tracer callbacks:
 void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
   if (p->GetSize() == 1064) {
-    NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-    NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+    //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+    //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
     //record the past ia times of link that about to Tx:
     if(prev_ia[ContextToNodeId(context)] != 0){
@@ -255,6 +257,7 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 
     // increment the packet number tracker:
     Npkt[ContextToNodeId(context)] ++;
+    if(N_enqueue[ContextToNodeId(context)] > 1) {N_backlog[ContextToNodeId(context)] ++;}
 
     if(NumActive(status) == 0){
       Npkt_ob[ContextToNodeId(context)] ++;
@@ -279,8 +282,8 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 
 // tracer function to keep track of collided packet's finish time
 void PhyTxEnd(int nodeID){
-  NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
-  NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+  //NS_LOG_UNCOND("PHY-TX_END time=" << Simulator::Now().GetSeconds() << " node=" << nodeID);
+  //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
   //record the past on times of link that just finish its Tx:
   if(prev_on[nodeID] != 0){
@@ -307,8 +310,8 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
   if (p->GetSize() == 1064) {
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
-      NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
-      NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+      //NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
+      //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       //record the past on times of link that just finish its Tx:
       if(prev_on[idx] != 0){
@@ -341,8 +344,8 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
 
-        NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
-        NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
+        //NS_LOG_UNCOND("PHY-RX-Drop time=" << Simulator::Now().GetSeconds() << " node=" << ContextToNodeId (context)-5 << " for " << p->GetUid() << " size=" << p->GetSize() << " reason: " << reason);
+        //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
       Npkt_drop[ContextToNodeId(context)-5] ++;
       if (reason == 3) {
@@ -372,11 +375,26 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
   }
 }
 
+void CheckEnqueue(std::string context, Ptr<const WifiMacQueueItem> item) {
+  //NS_LOG_UNCOND("Enueue=" << Simulator::Now().GetSeconds() << " Tx node ID=" << ContextToNodeId(context) << " Q_size: " << N_enqueue[ContextToNodeId(context)]);
+  N_enqueue[ContextToNodeId(context)] ++;
+}
+
+void CheckDequeue(std::string context, Ptr<const WifiMacQueueItem> item) {
+  //NS_LOG_UNCOND("Dequeue=" << Simulator::Now().GetSeconds() << " Tx node ID=" << ContextToNodeId(context) << " Q_size: " << N_enqueue[ContextToNodeId(context)]);
+  N_enqueue[ContextToNodeId(context)] --;
+}
+
+void CW_trace(std::string context, uint32_t CW_now, uint32_t CW_next) {
+  //NS_LOG_UNCOND("CWTrace=" << Simulator::Now().GetSeconds() << " Tx node ID=" << ContextToNodeId(context) << " CW_now: " << CW_now << " CW_next: " << CW_next);
+}
+
 int main (int argc, char *argv[]){
 
   uint32_t packetSize = 1000; // bytes
   uint32_t numPackets = 100000; // a sufficient large enough number
   double mean = 0.02;
+  double mean2 = 0.02;
 	double bound = 0.0;
 
   std::fill_n(cg, 25, 1); // initialize the contention graph as a fully-connected one.
@@ -396,8 +414,9 @@ int main (int argc, char *argv[]){
   cmd.AddValue ("prop_loss", "select the propagation loss model: 1 for RangePropagationLossModel; 2 for Friis model", prop_loss);
   cmd.AddValue ("delta2", "Tx position of link 2", delta2);
   cmd.AddValue ("delta4", "Tx position of link 4", delta4);
-  cmd.AddValue ("outputmode", "selecte the output format: 1 reader friendly 2 for matlab", outputmode);
+  cmd.AddValue ("outputmode", "select the output format: 1 reader friendly 2 for matlab", outputmode);
   cmd.AddValue ("ia_mean", "the mean value of the exponentially distributed pkt inter-arrival times", mean);
+  cmd.AddValue ("ia_mean2", "the mean value of the exponentially distributed pkt inter-arrival times for node 2", mean2);
   cmd.AddValue ("TopologyRun", "the mean value of the exponentially distributed pkt inter-arrival times", Topology_Run);
   cmd.AddValue ("top", "the topology index for test with HN collision", top);
   cmd.Parse(argc, argv);
@@ -414,31 +433,31 @@ int main (int argc, char *argv[]){
   Ptr<ListPositionAllocator> positionAlloc_rx = CreateObject<ListPositionAllocator>();
 
   if(top == 0) {  //The case without HN yet direct interference (for sim_T.sh testing)
-    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.7, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(2.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(2.3, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(8.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(7.4, 2.0, 0.0));
 
-    positionAlloc_rx->Add(Vector(0.9, 2.8, 0.0));
-    positionAlloc_rx->Add(Vector(2.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(2.5, 2.5, 0.0));
-    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(8.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(1.7, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(2.0, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(2.3, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(7.4, 2.4, 0.0));
   }
 
   if(top == 1) {
-    positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
-    positionAlloc_tx->Add(Vector(3.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(0.0, 2.0, 0.0));
+    positionAlloc_tx->Add(Vector(1.3, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(5.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(7.0, 2.0, 0.0));
     positionAlloc_tx->Add(Vector(9.0, 2.0, 0.0));
 
-    positionAlloc_rx->Add(Vector(1.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(3.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(5.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(7.0, 3.0, 0.0));
-    positionAlloc_rx->Add(Vector(9.0, 3.0, 0.0));
+    positionAlloc_rx->Add(Vector(0.0, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(1.3, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(5.0, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(7.0, 2.4, 0.0));
+    positionAlloc_rx->Add(Vector(9.0, 2.4, 0.0));
   }
   else if(top == 2) {
     positionAlloc_tx->Add(Vector(1.0, 2.0, 0.0));
@@ -568,7 +587,7 @@ int main (int argc, char *argv[]){
   YansWifiChannelHelper channel = YansWifiChannelHelper::Default ();
   channel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
   if(prop_loss == 1){
-    channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(1.1));
+    channel.AddPropagationLoss("ns3::RangePropagationLossModel","MaxRange",DoubleValue(0.5));
   }
   else if(prop_loss == 2){
     channel.AddPropagationLoss("ns3::FriisPropagationLossModel","Frequency",DoubleValue(5.15e9),"SystemLoss",DoubleValue(1),"MinLoss",DoubleValue(0));
@@ -622,7 +641,7 @@ int main (int argc, char *argv[]){
     source->Connect (remote);
     Simulator::ScheduleWithContext (source->GetNode()->GetId(),
                                          Seconds (1.001 + i*(0.0005)), &GenerateTraffic,
-                                         source, packetSize, numPackets, interval, mean);
+                                         source, packetSize, numPackets, interval, mean, mean2);
   }
 
   // we also use separate UDP applications that will send a single
@@ -639,7 +658,7 @@ int main (int argc, char *argv[]){
     echoClientHelper.SetAttribute ("Interval", TimeValue (Seconds (0.1)));
     echoClientHelper.SetAttribute ("PacketSize", UintegerValue (10));
     echoClientHelper.SetAttribute ("StartTime", TimeValue (Seconds (0.001+0.005*(i))));
-    pingApps.Add (echoClientHelper.Install (txer.Get(i) ));
+    pingApps.Add (echoClientHelper.Install(txer.Get(i)));
   }
 
 
@@ -647,7 +666,13 @@ int main (int argc, char *argv[]){
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyRxEnd" , MakeCallback(&PhyRx));
   Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/$ns3::WifiPhy/PhyRxDrop",MakeCallback(&PhyRxDrop));
 
-  Config::Set("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/FrameCaptureModel/$ns3::SimpleFrameCaptureModel/Margin",DoubleValue(-5000));
+  Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/Txop/Queue/Enqueue", MakeCallback(&CheckEnqueue));
+  Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/Txop/Queue/Dequeue", MakeCallback(&CheckDequeue));
+
+  Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/Txop/CwTrace", MakeCallback(&CW_trace));
+  //Config::Set("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/Txop/MaxCw", UintegerValue (125));
+  //Config::Set("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/Txop/MinCw", UintegerValue (251));
+  //Config::Set("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/FrameCaptureModel/$ns3::SimpleFrameCaptureModel/Margin",DoubleValue(-5000));
 
   // Install FlowMonitor on all nodes
   FlowMonitorHelper flowmon;
@@ -674,7 +699,7 @@ int main (int argc, char *argv[]){
         std::cout << "  Tx Packets:   " << i->second.txPackets << "\n";
         std::cout << "  Rx Packets:   " << i->second.rxPackets << "\n";
         std::cout << "  Lost Packets:   " << i->second.lostPackets << "\n";
-        //std::cout << "  Throughput: " << i->second.rxBytes * 8.0 / (sim_time - 1) / 1000 / 1000  << " Mbps\n";
+        std::cout << "  Throughput: " << i->second.rxBytes * 8.0 / (sim_time - 1) / 1000 / 1000  << " Mbps\n";
         std::cout << "  Packet Rate: " << i->second.rxPackets * 1.0 / (sim_time - 1) << " Pkt/Sec" << "\n";
       }
     }
@@ -738,11 +763,13 @@ int main (int argc, char *argv[]){
       {cg[i] = 0;}
   }
 
+  double r_real[5] = {0,0,0,0,0};
   // computation of r and r_empirical:
   for (int i=0; i<=4; i++){
     r[i] = static_cast<double>(NiC2[i])/Get_r_denom(cg,i);
     on[i] = on[i]/N_on[i];
     ia[i] = ia[i]/N_ia[i];
+    r_real[i] = on[i]/ia[i];
     //std::cout << "For link " << i << " Avg. ON: " << on[i] << " Avg. IA: " << ia[i] << std::endl;
   }
 
@@ -758,9 +785,12 @@ int main (int argc, char *argv[]){
     std::cout << "Npkt_rx: " << Npkt_rx[0] << " " << Npkt_rx[1] << " " << Npkt_rx[2] << " " << Npkt_rx[3] << " " << Npkt_rx[4] << std::endl;
     std::cout << "Npkt_drop: " << Npkt_drop[0] << " " << Npkt_drop[1] << " " << Npkt_drop[2] << " " << Npkt_drop[3] << " " << Npkt_drop[4] << std::endl;
     std::cout << "Npkt_ob: " << Npkt_ob[0] << " " << Npkt_ob[1] << " " << Npkt_ob[2] << " " << Npkt_ob[3] << " " << Npkt_ob[4] << std::endl;
+    std::cout << "N_backlog:" << N_backlog[0] << " " << N_backlog[1] << " " << N_backlog[2] << " " << N_backlog[3] << " " << N_backlog[4] << " " << std::endl;
     //std::cout << "NiC2: " << NiC2[0] << " " << NiC2[1] << " " << NiC2[2] << " " << NiC2[3] << " " << NiC2[4] << std::endl;
+
     std::cout << "r_est: " << r[0] << " " << r[1] << " " << r[2] << " " << r[3] << " " << r[4] << std::endl;
-    //std::cout << "r_empirical:" << r_em[0] << " " << r_em[1] << " " << r_em[2] << " " << r_em[3] << " " << r_em[4] << std::endl;
+    std::cout << "r_real: " << r_real[0] << " " << r_real[1] << " " << r_real[2] << " " << r_real[3] << " " << r_real[4] << std::endl;
+    std::cout << "ON:" << on[0] << " " << on[1] << " " << on[2] << " " << on[3] << " " << on[4] << std::endl;
 
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
