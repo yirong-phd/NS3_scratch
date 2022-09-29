@@ -202,12 +202,13 @@ void ReceivePacket (Ptr<Socket> socket)
 	Ptr<Packet> p;
   while ((p = socket->RecvFrom(from)))
     {
-			if (p->GetSize() == 1000) {
+			if (p->GetSize() >= 1000) {
       	//NS_LOG_UNCOND("Received a Pkt!");
 			}
     }
 }
-static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
+//uint32_t pktSize,
+static void GenerateTraffic (Ptr<Socket> socket, Ptr<UniformRandomVariable> pktSize,
                              uint32_t pktCount, Ptr<ExponentialRandomVariable> pktInterval, double mean, double mean2)
 {
   if (pktCount > 0)
@@ -222,7 +223,11 @@ static void GenerateTraffic (Ptr<Socket> socket, uint32_t pktSize,
       else {
         pktInterval->SetAttribute ("Mean", DoubleValue(mean));
       }
-			Ptr<Packet> data_packet = Create<Packet> (pktSize);
+      pktSize->SetAttribute("Min",DoubleValue(1000.0));
+      pktSize->SetAttribute("Max",DoubleValue(1200.0));
+
+      uint32_t N = (uint32_t)(pktSize->GetValue());
+			Ptr<Packet> data_packet = Create<Packet> (N);
       AddSrc(srctable,data_packet->GetUid(),socket->GetNode()->GetId());
 			socket->Send(data_packet);
       Simulator::Schedule (Seconds(pktInterval->GetValue()), &GenerateTraffic,
@@ -242,7 +247,7 @@ int ContextToNodeId(std::string context) {
 
 // Tracer callbacks:
 void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
-  if (p->GetSize() == 1064) {
+  if (p->GetSize() >= 1064) {
     //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
     //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
@@ -307,7 +312,7 @@ void PhyTxEnd(int nodeID){
 }
 
 void PhyRx(std::string context, Ptr<const Packet> p) {
-  if (p->GetSize() == 1064) {
+  if (p->GetSize() >= 1064) {
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
       //NS_LOG_UNCOND ("PhyRx node " << ContextToNodeId(context)-5 << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
@@ -340,7 +345,7 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
 }
 
 void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason reason){
-  if(p->GetSize() == 1064) {
+  if(p->GetSize() >= 1064) {
     int idx = FindSrc(srctable,p->GetUid());
     if(FindSrc(srctable,p->GetUid())!= -1 && ContextToNodeId(context)-5 == FindSrc(srctable,p->GetUid())) {
 
@@ -391,7 +396,10 @@ void CW_trace(std::string context, uint32_t CW_now, uint32_t CW_next) {
 
 int main (int argc, char *argv[]){
 
-  uint32_t packetSize = 1000; // bytes
+  //uint32_t packetSize = 1000; // bytes
+  Ptr<UniformRandomVariable> packetSize = CreateObject<UniformRandomVariable> ();
+  packetSize->SetAttribute("Min",DoubleValue(1000.0));
+  packetSize->SetAttribute("Max",DoubleValue(1200.0));
   uint32_t numPackets = 100000; // a sufficient large enough number
   double mean = 0.02;
   double mean2 = 0.02;
@@ -759,7 +767,7 @@ int main (int argc, char *argv[]){
   double count_max = *std::max_element(cg_count,cg_count+25);
   for(int i=0; i<=24; i++){
     cg_count[i] = cg_count[i]/count_max;
-    if(cg_count[i] >= 0.1) // a pre-defined threshold here.
+    if(cg_count[i] >= 0.05) // a pre-defined threshold here.
       {cg[i] = 0;}
   }
 
@@ -795,7 +803,7 @@ int main (int argc, char *argv[]){
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
 
-    for(int i=0; i<= 24; i++) {std::cout << cg[i] << " ";} std::cout << "\n";
+    for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";} std::cout << "\n";
 
     std::cout << "Error:" << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
               << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << "\n";
