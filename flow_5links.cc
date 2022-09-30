@@ -21,6 +21,8 @@ using namespace ns3;
 //int Nflow = 5;
 double Npkt[5] = {0,0,0,0,0}; double Npkt_ob[5] = {0,0,0,0,0}; double Npkt_rx[5] = {0,0,0,0,0}; double Npkt_drop[5] = {0,0,0,0,0};
 
+double ET_on[5] = {0,0,0,0,0}; bool intact_H[5] = {false,false,false,false,false};
+
 double N_enqueue[5] = {0,0,0,0,0}; double N_backlog[5] = {0,0,0,0,0};
 
 double prev_on[5] = {0,0,0,0,0}; double prev_ia[5] = {0,0,0,0,0};
@@ -34,7 +36,6 @@ double cg_count[25];
 
 int NiC2[5] = {0,0,0,0,0}; // the observable values of N_{i->C2} for r_i's estimation
 double r[5] = {0,0,0,0,0};
-double r_em[5] = {0,0,0,0,0};
 std::map<int,int> srctable;
 
 double Get_r_denom(bool* arr, int i) {
@@ -251,14 +252,15 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
     //NS_LOG_UNCOND ("PhyTx node " << ContextToNodeId(context) << " at " << Simulator::Now ().GetSeconds () << " for " << p->GetUid() << " Length " << p->GetSize());
     //NS_LOG_UNCOND(status[0] << " " << status[1] << " " << status[2] << " " << status[3] << " " << status[4] << std::endl);
 
+    //By default, the MAC header is corrupted:
+    intact_H[ContextToNodeId(context)] = false;
     //record the past ia times of link that about to Tx:
     if(prev_ia[ContextToNodeId(context)] != 0){
       ia[ContextToNodeId(context)] += (Simulator::Now().GetSeconds() - prev_ia[ContextToNodeId(context)]);
       N_ia[ContextToNodeId(context)] += 1;
-
     }
     // update the time-stamp for the start of current pkt Tx
-    prev_on[ContextToNodeId(context)] = Simulator::Now ().GetSeconds ();
+    prev_on[ContextToNodeId(context)] = Simulator::Now().GetSeconds ();
 
     // increment the packet number tracker:
     Npkt[ContextToNodeId(context)] ++;
@@ -266,6 +268,7 @@ void PhyTx(std::string context, Ptr<const Packet> p, double txPowerW) {
 
     if(NumActive(status) == 0){
       Npkt_ob[ContextToNodeId(context)] ++;
+      intact_H[ContextToNodeId(context)] = true; // The case where MAC header is intact
     }
     else if(NumActive(status) == 1) { // N_{j -> i,j}, increment the NiC2[i]
       NiC2[getOneActive(status)] ++;
@@ -294,6 +297,9 @@ void PhyTxEnd(int nodeID){
   if(prev_on[nodeID] != 0){
     on[nodeID] += (Simulator::Now().GetSeconds() - prev_on[nodeID]);
     N_on[nodeID] += 1;
+    if(intact_H[nodeID] == true){
+      ET_on[nodeID] += (Simulator::Now().GetSeconds() - prev_on[nodeID]); // Collect the T_on for all pkt with intact MAC header
+    }
   }
   // update the time-stamp for the start of current pkt Tx
   prev_ia[nodeID] = Simulator::Now ().GetSeconds ();
@@ -322,9 +328,12 @@ void PhyRx(std::string context, Ptr<const Packet> p) {
       if(prev_on[idx] != 0){
         on[idx] += (Simulator::Now().GetSeconds() - prev_on[idx]);
         N_on[idx] += 1;
+        if(intact_H[idx] == true){
+          ET_on[idx] += (Simulator::Now().GetSeconds() - prev_on[idx]); // Collect the T_on for all pkt with intact MAC header
+        }
       }
       // update the time-stamp for the start of current pkt Tx
-      prev_ia[idx] = Simulator::Now ().GetSeconds ();
+      prev_ia[idx] = Simulator::Now().GetSeconds();
 
       // update the Tx status vector while estimating the CG:
       std::copy(p1,p1+5,p2);  //p2 = p1
@@ -359,6 +368,9 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
         if(prev_on[idx] != 0){
           on[idx] += (Simulator::Now().GetSeconds() - prev_on[idx]);
           N_on[idx] += 1;
+          if(intact_H[idx] == true){
+            ET_on[idx] += (Simulator::Now().GetSeconds() - prev_on[idx]); // Collect the T_on for all pkt with intact MAC header
+          }
         }
         // update the time-stamp for the start of current pkt Tx
         prev_ia[idx] = Simulator::Now ().GetSeconds ();
@@ -374,7 +386,8 @@ void PhyRxDrop(std::string context, Ptr<const Packet> p, WifiPhyRxfailureReason 
         }
       }
       else if(reason == 2 || reason == 5) {
-        Simulator::Schedule(Seconds(0.0014), &PhyTxEnd, ContextToNodeId(context)-5);
+        double p_duration = (p->GetSize()+19)*8.0/(6*1000*1000);
+        Simulator::Schedule(Seconds(p_duration), &PhyTxEnd, ContextToNodeId(context)-5);
       }
     }
   }
@@ -803,11 +816,15 @@ int main (int argc, char *argv[]){
     std::cout << "Computed pkt volume: " << Npkt_ob[0]*(1+GetSoP(cg,r,0)) << " " << Npkt_ob[1]*(1+GetSoP(cg,r,1)) << " " << Npkt_ob[2]*(1+GetSoP(cg,r,2)) << " "
               << Npkt_ob[3]*(1+GetSoP(cg,r,3)) << " " << Npkt_ob[4]*(1+GetSoP(cg,r,4)) << "\n";
 
-    for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";} std::cout << "\n";
+    //for(int i=0; i<= 24; i++) {std::cout << cg_count[i] << " ";} std::cout << "\n";
 
     std::cout << "Error:" << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
               << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << "\n";
-    std::cout << "C_rate:" << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]);
+    std::cout << "C_rate:" << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]) << std::endl;
+    std::cout << "ET_on" << ET_on[0]/Npkt_ob[0] << " " << ET_on[1]/Npkt_ob[1] << " " << ET_on[2]/Npkt_ob[2] << " " << ET_on[3]/Npkt_ob[3] << " " << ET_on[4]/Npkt_ob[4] << std::endl;
+
+
+
   }
   else if(outputmode == 2){
     double Npkt_link1 = Npkt_ob[0]*(1 + GetSoP(cg,r,0)); double Npkt_link3 = Npkt_ob[2]*(1 + GetSoP(cg,r,2)); double Npkt_link5 = Npkt_ob[4]*(1 + GetSoP(cg,r,4));
@@ -828,7 +845,8 @@ int main (int argc, char *argv[]){
               << Npkt_link4*1.0/(sim_time - 1) << " " << Npkt_link5*1.0/(sim_time - 1) << " "
               << std::abs(Npkt_ob[0]*(1+GetSoP(cg,r,0)) - Npkt[0])/Npkt[0] << " " << std::abs(Npkt_ob[1]*(1+GetSoP(cg,r,1)) - Npkt[1])/Npkt[1] << " " << std::abs(Npkt_ob[2]*(1+GetSoP(cg,r,2)) - Npkt[2])/Npkt[2]
               << " " << std::abs(Npkt_ob[3]*(1+GetSoP(cg,r,3)) - Npkt[3])/Npkt[3] << " " << std::abs(Npkt_ob[4]*(1+GetSoP(cg,r,4)) - Npkt[4])/Npkt[4] << " "
-              << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]) << "\n";
+              << (Npkt_drop[0]+Npkt_drop[1]+Npkt_drop[2]+Npkt_drop[3]+Npkt_drop[4])/(Npkt[0]+Npkt[1]+Npkt[2]+Npkt[3]+Npkt[4]) << " "
+              << ET_on[0]/Npkt_ob[0] << " " << ET_on[1]/Npkt_ob[1] << " " << ET_on[2]/Npkt_ob[2] << " " << ET_on[3]/Npkt_ob[3] << " " << ET_on[4]/Npkt_ob[4] << "\n";
   }
   //for(int i=0; i<=24; i++){ std::cout << cg_count[i] << ' ';}
   return 0;
